@@ -1,6 +1,6 @@
 local mType = Game.createMonsterType("Training Monk")
 local monster = {}
-
+--a
 monster.description = "a training monk"
 monster.experience = 0
 monster.outfit = {

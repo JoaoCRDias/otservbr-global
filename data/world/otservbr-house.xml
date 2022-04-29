@@ -152,7 +152,7 @@
 	<house name="Northport Village 1" houseid="2815" entryx="32482" entryy="31614" entryz="7" rent="50000" townid="6" size="20" />
 	<house name="Nautic Observer" houseid="2816" entryx="32483" entryy="31825" entryz="7" rent="200000" townid="6" size="144" />
 	<house name="Nordic Stronghold" houseid="2817" entryx="32297" entryy="31675" entryz="7" rent="250000" guildhall="true" townid="6" size="331" />
-	<house name="Senja Clanhall" houseid="2818" entryx="32168" entryy="31664" entryz="7" rent="250000" guildhall="true" townid="6" size="184" />
+	<house name="Senja Clanhall" houseid="2818" entryx="32168" entryy="31664" entryz="7" rent="250000" guildhall="true" townid="6" size="174" />
 	<house name="Seawatch" houseid="2819" entryx="32520" entryy="31600" entryz="7" rent="250000" guildhall="true" townid="6" size="367" />
 	<house name="Dwarven Magnate's Estate" houseid="2820" entryx="32643" entryy="31927" entryz="2" rent="300000" townid="7" size="242" />
 	<house name="Forge Master's Quarters" houseid="2821" entryx="32649" entryy="31889" entryz="8" rent="300000" townid="7" size="78" />
@@ -984,61 +984,4 @@
 	<house name="Pilchard Bin 9" houseid="3684" entryx="32281" entryy="31152" entryz="6" rent="50000" townid="16" size="7" />
 	<house name="Pilchard Bin 10" houseid="3685" entryx="32281" entryy="31148" entryz="6" rent="0" townid="16" size="7" />
 	<house name="Mammoth House" houseid="3686" entryx="32234" entryy="31227" entryz="7" rent="300000" townid="16" size="160" />
-	<house name="I" houseid="3687" entryx="31746" entryy="32391" entryz="7" rent="0" townid="27" size="49" />
-	<house name="II" houseid="3688" entryx="31746" entryy="32398" entryz="7" rent="0" townid="27" size="49" />
-	<house name="III" houseid="3689" entryx="31746" entryy="32405" entryz="7" rent="0" townid="27" size="49" />
-	<house name="VI" houseid="3690" entryx="31750" entryy="32405" entryz="7" rent="0" townid="27" size="49" />
-	<house name="V" houseid="3691" entryx="31750" entryy="32398" entryz="7" rent="0" townid="27" size="49" />
-	<house name="IV" houseid="3692" entryx="31750" entryy="32391" entryz="7" rent="0" townid="27" size="49" />
-	<house name="VII" houseid="3693" entryx="31766" entryy="32387" entryz="7" rent="0" townid="27" size="18" />
-	<house name="VIII" houseid="3694" entryx="31771" entryy="32387" entryz="7" rent="0" townid="27" size="28" />
-	<house name="IX" houseid="3695" entryx="31771" entryy="32382" entryz="7" rent="0" townid="27" size="22" />
-	<house name="XII" houseid="3696" entryx="31767" entryy="32377" entryz="7" rent="0" townid="27" size="57" />
-	<house name="X" houseid="3697" entryx="31771" entryy="32375" entryz="7" rent="0" townid="27" size="22" />
-	<house name="XIII" houseid="3698" entryx="31767" entryy="32372" entryz="7" rent="0" townid="27" size="57" />
-	<house name="XI" houseid="3699" entryx="31771" entryy="32368" entryz="7" rent="0" townid="27" size="22" />
-	<house name="XIV" houseid="3700" entryx="31762" entryy="32359" entryz="7" rent="0" townid="27" size="56" />
-	<house name="XV" houseid="3701" entryx="31729" entryy="32347" entryz="7" rent="0" townid="27" size="16" />
-	<house name="XVI" houseid="3702" entryx="31729" entryy="32352" entryz="7" rent="0" townid="27" size="16" />
-	<house name="XVII" houseid="3703" entryx="31729" entryy="32357" entryz="7" rent="0" townid="27" size="16" />
-	<house name="XVIII" houseid="3704" entryx="31729" entryy="32357" entryz="6" rent="0" townid="27" size="16" />
-	<house name="XIX" houseid="3705" entryx="31729" entryy="32352" entryz="6" rent="0" townid="27" size="16" />
-	<house name="XX" houseid="3707" entryx="31729" entryy="32347" entryz="6" rent="0" townid="27" size="16" />
-	<house name="XXI" houseid="3708" entryx="31713" entryy="32343" entryz="7" rent="0" townid="27" size="5" />
-	<house name="XXII" houseid="3709" entryx="31709" entryy="32341" entryz="7" rent="0" townid="27" size="4" />
-	<house name="XXIII" houseid="3710" entryx="31709" entryy="32345" entryz="7" rent="0" townid="27" size="4" />
-	<house name="XXIV" houseid="3711" entryx="31711" entryy="32350" entryz="7" rent="0" townid="27" size="23" />
-	<house name="XXV" houseid="3712" entryx="31713" entryy="32350" entryz="7" rent="0" townid="27" size="31" />
-	<house name="XXVI" houseid="3713" entryx="31712" entryy="32354" entryz="7" rent="0" townid="27" size="69" />
-	<house name="XXVIII" houseid="3714" entryx="31710" entryy="32374" entryz="7" rent="0" townid="27" size="36" />
-	<house name="XXVII" houseid="3715" entryx="31710" entryy="32376" entryz="7" rent="0" townid="27" size="36" />
-	<house name="XXIX" houseid="3716" entryx="31708" entryy="32393" entryz="7" rent="0" townid="27" size="22" />
-	<house name="XXX" houseid="3717" entryx="31718" entryy="32390" entryz="7" rent="0" townid="27" size="42" />
-	<house name="XXXI" houseid="3718" entryx="31726" entryy="32387" entryz="7" rent="0" townid="27" size="36" />
-	<house name="XXXIII" houseid="3719" entryx="31721" entryy="32408" entryz="7" rent="0" townid="27" size="10" />
-	<house name="XXXIV" houseid="3720" entryx="31725" entryy="32408" entryz="7" rent="0" townid="27" size="10" />
-	<house name="XXXV" houseid="3721" entryx="31729" entryy="32408" entryz="7" rent="0" townid="27" size="10" />
-	<house name="XXXVI" houseid="3722" entryx="31726" entryy="32413" entryz="7" rent="0" townid="27" size="10" />
-	<house name="XXXVII" houseid="3723" entryx="31726" entryy="32418" entryz="7" rent="0" townid="27" size="10" />
-	<house name="XXXVIII" houseid="3724" entryx="31721" entryy="32416" entryz="7" rent="0" townid="27" size="14" />
-	<house name="XXXIX" houseid="3725" entryx="31715" entryy="32417" entryz="6" rent="0" townid="27" size="14" />
-	<house name="XXXX" houseid="3726" entryx="31726" entryy="32416" entryz="6" rent="0" townid="27" size="10" />
-	<house name="XXXXI" houseid="3727" entryx="31726" entryy="32411" entryz="6" rent="0" townid="27" size="13" />
-	<house name="XXXXII" houseid="3728" entryx="31726" entryy="32407" entryz="6" rent="0" townid="27" size="13" />
-	<house name="XXXXIII" houseid="3729" entryx="31724" entryy="32407" entryz="6" rent="0" townid="27" size="4" />
-	<house name="XXXXIV" houseid="3730" entryx="31721" entryy="32407" entryz="6" rent="0" townid="27" size="4" />
-	<house name="LIII" houseid="3731" entryx="31711" entryy="32430" entryz="6" rent="0" townid="27" size="11" />
-	<house name="LII" houseid="3732" entryx="31711" entryy="32430" entryz="6" rent="0" townid="27" size="2" />
-	<house name="LI" houseid="3733" entryx="31710" entryy="32430" entryz="6" rent="0" townid="27" size="11" />
-	<house name="XXXXVIII" houseid="3734" entryx="31710" entryy="32430" entryz="7" rent="0" townid="27" size="11" />
-	<house name="XXXXIX" houseid="3735" entryx="31711" entryy="32430" entryz="7" rent="0" townid="27" size="2" />
-	<house name="L" houseid="3736" entryx="31711" entryy="32430" entryz="7" rent="0" townid="27" size="11" />
-	<house name="XXXXVII" houseid="3738" entryx="31709" entryy="32423" entryz="7" rent="0" townid="27" size="22" />
-	<house name="XXXXVI" houseid="3739" entryx="31709" entryy="32417" entryz="7" rent="0" townid="27" size="14" />
-	<house name="XXXXV" houseid="3740" entryx="31709" entryy="32412" entryz="7" rent="0" townid="27" size="14" />
-	<house name="XXXII" houseid="3741" entryx="31711" entryy="32403" entryz="7" rent="0" townid="27" size="13" />
-	<house name="LIV" houseid="3742" entryx="31724" entryy="32427" entryz="7" rent="0" townid="27" size="46" />
-	<house name="LV" houseid="3743" entryx="31735" entryy="32430" entryz="7" rent="0" townid="27" size="50" />
-	<house name="LVI" houseid="3744" entryx="31739" entryy="32418" entryz="7" rent="0" townid="27" size="26" />
-	<house name="LVII" houseid="3745" entryx="31756" entryy="32423" entryz="7" rent="0" townid="27" size="120" />
 </houses>

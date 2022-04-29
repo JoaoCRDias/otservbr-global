@@ -1,7 +1,7 @@
 local internalNpcName = "Rings and Amulets"
 local npcType = Game.createNpcType(internalNpcName)
 local npcConfig = {}
-
+--a
 npcConfig.name = internalNpcName
 npcConfig.description = internalNpcName
 
