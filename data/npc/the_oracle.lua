@@ -49,9 +49,7 @@ local vocation = {}
 local town = {}
 local config = {
 	towns = {
-		["venore"] = TOWNS_LIST.VENORE,
-		["thais"] = TOWNS_LIST.THAIS,
-		["carlin"] = TOWNS_LIST.CARLIN
+		["kingsman"] = TOWNS_LIST.KINGSMAN
 	},
 	vocations = {
 		["sorcerer"] = {
