@@ -49,9 +49,7 @@ local vocation = {}
 local town = {}
 local config = {
 	towns = {
-		["venore"] = TOWNS_LIST.VENORE,
-		["thais"] = TOWNS_LIST.THAIS,
-		["carlin"] = TOWNS_LIST.CARLIN
+		["kingsman"] = TOWNS_LIST.KINGSMAN
 	},
 	vocations = {
 		["sorcerer"] = {
@@ -106,7 +104,7 @@ local function creatureSayCallback(npc, creature, type, message)
 
 	if npcHandler:getTopic(playerId) == 0 then
 		if MsgContains(message, "yes") then
-			npcHandler:say("IN WHICH TOWN DO YOU WANT TO LIVE: {CARLIN}, {THAIS}, OR {VENORE}?", npc, creature)
+			npcHandler:say("IN WHICH TOWN DO YOU WANT TO LIVE: {KINGSMAN}?", npc, creature)
 			npcHandler:setTopic(playerId, 1)
 		end
 	elseif npcHandler:getTopic(playerId) == 1 then
@@ -117,7 +115,7 @@ local function creatureSayCallback(npc, creature, type, message)
 			{KNIGHT}, {PALADIN}, {SORCERER}, OR {DRUID}?", npc, creature)
 			npcHandler:setTopic(playerId, 2)
 		else
-			npcHandler:say("IN WHICH TOWN DO YOU WANT TO LIVE: {CARLIN}, {THAIS}, OR {VENORE}?", npc, creature)
+			npcHandler:say("IN WHICH TOWN DO YOU WANT TO LIVE: {KINGSMAN}?", npc, creature)
 		end
 	elseif npcHandler:getTopic(playerId) == 2 then
 		local vocationTable = config.vocations[message:lower()]
