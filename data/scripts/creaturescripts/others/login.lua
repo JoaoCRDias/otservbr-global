@@ -22,8 +22,13 @@ local playerLogin = CreatureEvent("PlayerLogin")
 
 function playerLogin.onLogin(player)
 	local items = {
+		{3391, 1},
+		{3567, 1},
+		{645, 1},
+		{3556, 1},
+		{3415, 1},
 		{3003, 1},
-		{3031, 3}
+		{3457, 1},
 	}
 	if player:getLastLoginSaved() == 0 then
 		player:sendOutfitWindow()
@@ -32,16 +37,23 @@ function playerLogin.onLogin(player)
 			for i = 1, #items do
 				backpack:addItem(items[i][1], items[i][2])
 			end
+			if player:getVocation():getBaseId() == VOCATION.BASE_ID.KNIGHT then
+				backpack:addItem(7774, 1)
+				backpack:addItem(3327, 1)
+				backpack:addItem(7773, 1)
+			end
+			if player:getVocation():getBaseId() == VOCATION.BASE_ID.PALADIN then
+				backpack:addItem(3277, 1)
+			end
+			if player:getVocation():getBaseId() == VOCATION.BASE_ID.DRUID then
+				backpack:addItem(3066, 1)
+			end
+			if player:getVocation():getBaseId() == VOCATION.BASE_ID.SORCERER then
+				backpack:addItem(3074, 1)
+			end
 		end
-		player:addItem(2920, 1, true, 1, CONST_SLOT_AMMO)
 		db.query('UPDATE `players` SET `istutorial` = 0 where `id`='..player:getGuid())
-		-- Open channels
-		if table.contains({TOWNS_LIST.DAWNPORT, TOWNS_LIST.DAWNPORT_TUTORIAL}, player:getTown():getId())then
-			player:openChannel(3) -- World chat
-		else
-			player:openChannel(3) -- World chat
-			player:openChannel(5) -- Advertsing main
-		end
+
 	else
 		player:sendTextMessage(MESSAGE_STATUS, "Welcome to " .. SERVER_NAME .. "!")
 		player:sendTextMessage(MESSAGE_LOGIN, string.format("Your last visit in ".. SERVER_NAME ..": %s.", os.date("%d. %b %Y %X", player:getLastLoginSaved())))
@@ -51,8 +63,8 @@ function playerLogin.onLogin(player)
 		player:setStorageValue(Storage.PremiumAccount, 1)
 	end
 	-- Premium Ends Teleport to Temple, change addon (citizen) houseless
-	local defaultTown = "Thais" -- default town where player is teleported if his home town is in premium area
-	local freeTowns = {"Ab'Dendriel", "Carlin", "Kazordoon", "Thais", "Venore", "Rookgaard", "Dawnport", "Dawnport Tutorial", "Island of Destiny"} -- towns in free account area
+	local defaultTown = "Kingsman" -- default town where player is teleported if his home town is in premium area
+	local freeTowns = {"Ab'Dendriel", "Carlin", "Kazordoon", "Thais", "Venore", "Rookgaard", "Dawnport", "Dawnport Tutorial", "Kingsman", "Island of Destiny"} -- towns in free account area
 
 	if isPremium(player) == false and isInArray(freeTowns, player:getTown():getName()) == false then
 		local town = player:getTown()

@@ -6,7 +6,6 @@ local weapons = {
 		wandType = "ice",
 		level = 250,
 		mana = 22,
-		damage = {85, 105},
 		unproperly = true,
 		vocation = {
 			{"Druid", true},
@@ -20,7 +19,6 @@ local weapons = {
 		wandType = "ice",
 		level = 250,
 		mana = 22,
-		damage = {85, 105},
 		unproperly = true,
 		vocation = {
 			{"Druid", true},
@@ -34,7 +32,6 @@ local weapons = {
 		wandType = "fire",
 		level = 250,
 		mana = 22,
-		damage = {85, 105},
 		unproperly = true,
 		vocation = {
 			{"Sorcerer", true},
@@ -48,7 +45,6 @@ local weapons = {
 		wandType = "fire",
 		level = 250,
 		mana = 22,
-		damage = {85, 105},
 		unproperly = true,
 		vocation = {
 			{"Sorcerer", true},
@@ -158,7 +154,6 @@ local weapons = {
 		wandType = "earth",
 		level = 150,
 		mana = 19,
-		damage = {80, 100},
 		vocation = {
 			{"Sorcerer", true},
 			{"Master Sorcerer"}
@@ -171,7 +166,6 @@ local weapons = {
 		wandType = "ice",
 		level = 150,
 		mana = 19,
-		damage = {80, 100},
 		vocation = {
 			{"Druid", true},
 			{"Elder Druid"}
@@ -250,7 +244,6 @@ local weapons = {
 		wandType = "ice",
 		level = 220,
 		mana = 21,
-		damage = {89, 109},
 		vocation = {
 			{"Sorcerer", true},
 			{"Master Sorcerer"}
@@ -263,7 +256,6 @@ local weapons = {
 		wandType = "ice",
 		level = 270,
 		mana = 20,
-		damage = {85, 105},
 		vocation = {
 			{"Druid", true},
 			{"Elder Druid"}
@@ -287,7 +279,6 @@ local weapons = {
 		wandType = "ice",
 		level = 400,
 		mana = 21,
-		damage = {98, 118},
 		vocation = {
 			{"Druid", true},
 			{"Elder Druid"}
@@ -300,7 +291,6 @@ local weapons = {
 		wandType = "death",
 		level = 400,
 		mana = 21,
-		damage = {100, 120},
 		vocation = {
 			{"Sorcerer", true},
 			{"Master Sorcerer"}
@@ -450,7 +440,6 @@ local weapons = {
 		wandType = "earth",
 		level = 220,
 		mana = 21,
-		damage = {70, 110},
 		vocation = {
 			{"Druid", true},
 			{"Elder Druid"}
@@ -463,7 +452,6 @@ local weapons = {
 		wandType = "energy",
 		level = 270,
 		mana = 22,
-		damage = {94, 100},
 		vocation = {
 			{"Sorcerer", true},
 			{"Master Sorcerer"}
@@ -525,7 +513,6 @@ local weapons = {
 		wandType = "fire",
 		level = 180,
 		mana = 24,
-		damage = {88, 108},
 		vocation = {
 			{"Sorcerer", true},
 			{"Druid", true, true},
@@ -642,7 +629,6 @@ local weapons = {
 		wandType = "ice",
 		level = 230,
 		mana = 23,
-		damage = {80, 120},
 		vocation = {
 			{"Sorcerer", true},
 			{"Druid", true, true},
@@ -657,7 +643,6 @@ local weapons = {
 		wandType = "ice",
 		level = 180,
 		mana = 23,
-		damage = {86, 98},
 		vocation = {
 			{"Sorcerer", true},
 			{"Druid", true, true},
@@ -716,7 +701,6 @@ local weapons = {
 		wandType = "energy",
 		level = 300,
 		mana = 21,
-		damage = {86, 102},
 		vocation = {
 			{"Sorcerer", true},
 			{"Master Sorcerer"}
@@ -729,7 +713,6 @@ local weapons = {
 		wandType = "earth",
 		level = 300,
 		mana = 20,
-		damage = {87, 101},
 		vocation = {
 			{"Druid", true},
 			{"Elder Druid"}
@@ -763,7 +746,6 @@ local weapons = {
 		wandType = "ice",
 		level = 200,
 		mana = 20,
-		damage = {80, 110},
 		vocation = {
 			{"Druid", true},
 			{"Elder Druid"}
@@ -776,7 +758,6 @@ local weapons = {
 		wandType = "energy",
 		level = 200,
 		mana = 20,
-		damage = {80, 110},
 		vocation = {
 			{"Sorcerer", true},
 			{"Master Sorcerer"}
@@ -1447,7 +1428,6 @@ local weapons = {
 		wandType = "death",
 		level = 41,
 		mana = 15,
-		damage = {80, 100},
 		vocation = {
 			{"Sorcerer", true},
 			{"Master Sorcerer"}
@@ -1484,7 +1464,6 @@ local weapons = {
 		wandType = "energy",
 		level = 80,
 		mana = 18,
-		damage = {63, 77},
 		vocation = {
 			{"Sorcerer", true},
 			{"Druid", true, true},
@@ -1499,7 +1478,6 @@ local weapons = {
 		wandType = "ice",
 		level = 100,
 		mana = 18,
-		damage = {70, 105},
 		vocation = {
 			{"Druid", true},
 			{"Elder Druid"}
@@ -1512,7 +1490,6 @@ local weapons = {
 		wandType = "energy",
 		level = 100,
 		mana = 18,
-		damage = {70, 105},
 		vocation = {
 			{"Sorcerer", true},
 			{"Master Sorcerer"}
@@ -1613,7 +1590,6 @@ local weapons = {
 		wandType = "ice",
 		level = 100,
 		mana = 18,
-		damage = {70, 105},
 		vocation = {
 			{"Druid", true},
 			{"Elder Druid"}
@@ -1626,7 +1602,6 @@ local weapons = {
 		wandType = "energy",
 		level = 100,
 		mana = 18,
-		damage = {70, 105},
 		vocation = {
 			{"Sorcerer", true},
 			{"Master Sorcerer"}
@@ -1727,7 +1702,6 @@ local weapons = {
 		wandType = "ice",
 		level = 100,
 		mana = 18,
-		damage = {70, 105},
 		vocation = {
 			{"Druid", true},
 			{"Elder Druid"}
@@ -1740,7 +1714,6 @@ local weapons = {
 		wandType = "energy",
 		level = 100,
 		mana = 18,
-		damage = {70, 105},
 		vocation = {
 			{"Sorcerer", true},
 			{"Master Sorcerer"}
@@ -1863,7 +1836,6 @@ local weapons = {
 		wandType = "energy",
 		level = 100,
 		mana = 19,
-		damage = {80, 110},
 		vocation = {
 			{"Sorcerer", true},
 			{"Master Sorcerer"}
@@ -1876,7 +1848,6 @@ local weapons = {
 		wandType = "energy",
 		level = 65,
 		mana = 17,
-		damage = {65, 95},
 		vocation = {
 			{"Sorcerer", true},
 			{"Master Sorcerer"}
@@ -1924,7 +1895,6 @@ local weapons = {
 		wandType = "earth",
 		level = 37,
 		mana = 13,
-		damage = {56, 74},
 		vocation = {
 			{"Druid", true},
 			{"Elder Druid"}
@@ -1957,7 +1927,6 @@ local weapons = {
 		wandType = "ice",
 		level = 1,
 		mana = 1,
-		damage = {4, 8},
 		vocation = {
 			{"Druid", true},
 			{"Elder Druid"}
@@ -1970,7 +1939,6 @@ local weapons = {
 		wandType = "fire",
 		level = 1,
 		mana = 1,
-		damage = {4, 8},
 		vocation = {
 			{"Sorcerer", true},
 			{"Master Sorcerer"}
@@ -2392,7 +2360,6 @@ local weapons = {
 		wandType = "energy",
 		level = 1,
 		mana = 2,
-		damage = {8, 18},
 		vocation = {
 			{"None", true}
 		}
@@ -2496,7 +2463,6 @@ local weapons = {
 		wandType = "ice",
 		level = 65,
 		mana = 17,
-		damage = {75, 95},
 		vocation = {
 			{"Druid", true},
 			{"Elder Druid"}
@@ -2509,7 +2475,6 @@ local weapons = {
 		wandType = "earth",
 		level = 65,
 		mana = 17,
-		damage = {75, 95},
 		vocation = {
 			{"Druid", true},
 			{"Elder Druid"}
@@ -2522,7 +2487,6 @@ local weapons = {
 		wandType = "fire",
 		level = 65,
 		mana = 17,
-		damage = {75, 95},
 		vocation = {
 			{"Sorcerer", true},
 			{"Master Sorcerer"}
@@ -2535,7 +2499,6 @@ local weapons = {
 		wandType = "energy",
 		level = 65,
 		mana = 17,
-		damage = {75, 95},
 		vocation = {
 			{"Sorcerer", true},
 			{"Master Sorcerer"}
@@ -2660,7 +2623,6 @@ local weapons = {
 		wandType = "energy",
 		level = 40,
 		mana = 13,
-		damage = {56, 74},
 		vocation = {
 			{"Sorcerer", true},
 			{"Master Sorcerer"}
@@ -2684,7 +2646,6 @@ local weapons = {
 		wandType = "ice",
 		level = 40,
 		mana = 13,
-		damage = {56, 74},
 		vocation = {
 			{"Druid", true},
 			{"Elder Druid"}
@@ -2716,7 +2677,6 @@ local weapons = {
 		wandType = "death",
 		level = 37,
 		mana = 9,
-		damage = {44, 62},
 		vocation = {
 			{"Sorcerer", true},
 			{"Master Sorcerer"}
@@ -2928,7 +2888,6 @@ local weapons = {
 		wandType = "death",
 		level = 42,
 		mana = 13,
-		damage = {56, 74},
 		vocation = {
 			{"Sorcerer", true},
 			{"Master Sorcerer"}
@@ -2941,7 +2900,6 @@ local weapons = {
 		wandType = "fire",
 		level = 22,
 		mana = 5,
-		damage = {23, 37},
 		vocation = {
 			{"Sorcerer", true},
 			{"Master Sorcerer"}
@@ -2954,7 +2912,6 @@ local weapons = {
 		wandType = "energy",
 		level = 37,
 		mana = 13,
-		damage = {56, 74},
 		vocation = {
 			{"Sorcerer", true},
 			{"Master Sorcerer"}
@@ -2967,7 +2924,6 @@ local weapons = {
 		wandType = "earth",
 		level = 37,
 		mana = 13,
-		damage = {56, 74},
 		vocation = {
 			{"Druid", true},
 			{"Elder Druid"}
@@ -2980,7 +2936,6 @@ local weapons = {
 		wandType = "ice",
 		level = 22,
 		mana = 5,
-		damage = {23, 37},
 		vocation = {
 			{"Druid", true},
 			{"Elder Druid"}
@@ -2993,7 +2948,6 @@ local weapons = {
 		wandType = "death",
 		level = 42,
 		mana = 13,
-		damage = {56, 74},
 		vocation = {
 			{"Druid", true},
 			{"Elder Druid"}
@@ -4909,7 +4863,6 @@ local weapons = {
 		wandType = "fire",
 		level = 13,
 		mana = 3,
-		damage = {13, 25},
 		vocation = {
 			{"Sorcerer", true},
 			{"Master Sorcerer"}
@@ -4922,7 +4875,6 @@ local weapons = {
 		wandType = "energy",
 		level = 6,
 		mana = 1,
-		damage = {8, 18},
 		vocation = {
 			{"Sorcerer", true},
 			{"Master Sorcerer"}
@@ -4935,7 +4887,6 @@ local weapons = {
 		wandType = "energy",
 		level = 26,
 		mana = 8,
-		damage = {37, 53},
 		vocation = {
 			{"Sorcerer", true},
 			{"Master Sorcerer"}
@@ -4948,7 +4899,6 @@ local weapons = {
 		wandType = "death",
 		level = 19,
 		mana = 5,
-		damage = {23, 37},
 		vocation = {
 			{"Sorcerer", true},
 			{"Master Sorcerer"}
@@ -4961,7 +4911,6 @@ local weapons = {
 		wandType = "fire",
 		level = 33,
 		mana = 8,
-		damage = {56, 74},
 		vocation = {
 			{"Sorcerer", true},
 			{"Master Sorcerer"}
@@ -4974,7 +4923,6 @@ local weapons = {
 		wandType = "ice",
 		level = 13,
 		mana = 3,
-		damage = {13, 25},
 		vocation = {
 			{"Druid", true},
 			{"Elder Druid"}
@@ -4987,7 +4935,6 @@ local weapons = {
 		wandType = "death",
 		level = 19,
 		mana = 5,
-		damage = {23, 37},
 		vocation = {
 			{"Druid", true},
 			{"Elder Druid"}
@@ -5000,7 +4947,6 @@ local weapons = {
 		wandType = "ice",
 		level = 33,
 		mana = 13,
-		damage = {56, 74},
 		vocation = {
 			{"Druid", true},
 			{"Elder Druid"}
@@ -5013,7 +4959,6 @@ local weapons = {
 		wandType = "earth",
 		level = 6,
 		mana = 2,
-		damage = {8, 18},
 		vocation = {
 			{"Druid", true},
 			{"Elder Druid"}
@@ -5026,7 +4971,6 @@ local weapons = {
 		wandType = "earth",
 		level = 26,
 		mana = 8,
-		damage = {37, 53},
 		vocation = {
 			{"Druid", true},
 			{"Elder Druid"}

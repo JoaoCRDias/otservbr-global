@@ -52,16 +52,18 @@ TeleportItemAction = {
 }
 
 TeleportItemUnique = {
+	--Cobra entrance
 	[15001] = {
 		itemId = 31673,
-		itemPos = {x = 33315, y = 32647, z = 6},
-		destination = {x = 33384, y = 32627, z = 7},
+		itemPos = {x = 1111, y = 1092, z = 6},
+		destination = {x = 1209, y = 1023, z = 7},
 		effect = CONST_ME_TELEPORT
 	},
+	--Cobra leave
 	[15002] = {
-		itemId = 1759,
-		itemPos = {x = 33383, y = 32626, z = 7},
-		destination = {x = 33314, y = 32647, z = 6},
+		itemId = 4997,
+		itemPos = {x = 1209, y = 1022, z = 7},
+		destination = {x = 1110, y = 1092, z = 6},
 		effect = CONST_ME_TELEPORT
 	},
 	[15003] = {

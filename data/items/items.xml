@@ -2,7 +2,7 @@
 <items>
 	<!--  Liquids -->
 	<!--  Fluid type 0 is same as water (id="1") -->
-	<item id="1" name="water" /> 
+	<item id="1" name="water" />
 	<item id="2" name="wine" />
 	<item id="3" name="beer" />
 	<item id="4" name="mud" />
@@ -4728,6 +4728,7 @@
 	<item id="3065" article="a" name="terra rod">
 		<attribute key="description" value="Small stones are flying from its tip"/>
 		<attribute key="weaponType" value="wand"/>
+		<attribute key="attack" value="26"/>
 		<attribute key="shootType" value="smallearth"/>
 		<attribute key="range" value="3"/>
 		<attribute key="weight" value="2500"/>
@@ -4735,6 +4736,7 @@
 	<item id="3066" article="a" name="snakebite rod">
 		<attribute key="description" value="It seems to twitch and quiver as if trying to escape your grip"/>
 		<attribute key="weaponType" value="wand"/>
+		<attribute key="attack" value="5"/>
 		<attribute key="shootType" value="smallearth"/>
 		<attribute key="range" value="3"/>
 		<attribute key="weight" value="1900"/>
@@ -4742,6 +4744,7 @@
 	<item id="3067" article="a" name="hailstorm rod">
 		<attribute key="description" value="It grants you the power of striking your foes with furious hailstorms"/>
 		<attribute key="weaponType" value="wand"/>
+		<attribute key="attack" value="33"/>
 		<attribute key="shootType" value="smallice"/>
 		<attribute key="range" value="3"/>
 		<attribute key="weight" value="2700"/>
@@ -4753,6 +4756,7 @@
 		<attribute key="description" value="It was brought up from hell to deliver death"/>
 		<attribute key="weaponType" value="wand"/>
 		<attribute key="shootType" value="death"/>
+		<attribute key="attack" value="15"/>
 		<attribute key="range" value="3"/>
 		<attribute key="weight" value="2300"/>
 	</item>
@@ -4760,6 +4764,7 @@
 		<attribute key="description" value="Icecold rays of moonlight shimmer on its tip"/>
 		<attribute key="weaponType" value="wand"/>
 		<attribute key="shootType" value="smallice"/>
+		<attribute key="attack" value="9"/>
 		<attribute key="range" value="3"/>
 		<attribute key="weight" value="2100"/>
 	</item>
@@ -4767,6 +4772,7 @@
 		<attribute key="description" value="It unleashes the very fires of hell"/>
 		<attribute key="weaponType" value="wand"/>
 		<attribute key="shootType" value="fire"/>
+		<attribute key="attack" value="33"/>
 		<attribute key="range" value="3"/>
 		<attribute key="weight" value="2700"/>
 	</item>
@@ -4774,6 +4780,7 @@
 		<attribute key="description" value="It is half-rotten itself and reeks terribly"/>
 		<attribute key="weaponType" value="wand"/>
 		<attribute key="shootType" value="death"/>
+		<attribute key="attack" value="15"/>
 		<attribute key="range" value="3"/>
 		<attribute key="weight" value="2300"/>
 	</item>
@@ -4781,6 +4788,7 @@
 		<attribute key="description" value="The energy of a radiant star is trapped inside its globe"/>
 		<attribute key="weaponType" value="wand"/>
 		<attribute key="shootType" value="energy"/>
+		<attribute key="attack" value="26"/>
 		<attribute key="range" value="3"/>
 		<attribute key="weight" value="2500"/>
 	</item>
@@ -4788,6 +4796,7 @@
 		<attribute key="description" value="Surges of energy rush through the tip of this wand"/>
 		<attribute key="weaponType" value="wand"/>
 		<attribute key="shootType" value="energy"/>
+		<attribute key="attack" value="5"/>
 		<attribute key="range" value="3"/>
 		<attribute key="weight" value="1900"/>
 	</item>
@@ -4796,6 +4805,7 @@
 		<attribute key="weaponType" value="wand"/>
 		<attribute key="shootType" value="fire"/>
 		<attribute key="range" value="3"/>
+		<attribute key="attack" value="9"/>
 		<attribute key="weight" value="2100"/>
 		<attribute key="imbuementslot" value="2">
 			<attribute key="life leech" value="3"/>
@@ -16116,6 +16126,7 @@
 		<attribute key="weaponType" value="wand"/>
 		<attribute key="shootType" value="death"/>
 		<attribute key="range" value="3"/>
+		<attribute key="attack" value="42"/>
 		<attribute key="weight" value="2900"/>
 		<attribute key="imbuementslot" value="2">
 			<attribute key="life leech" value="3"/>
@@ -16128,6 +16139,7 @@
 		<attribute key="weaponType" value="wand"/>
 		<attribute key="shootType" value="smallice"/>
 		<attribute key="range" value="3"/>
+		<attribute key="attack" value="21"/>
 		<attribute key="weight" value="2900"/>
 		<attribute key="imbuementslot" value="2">
 			<attribute key="life leech" value="3"/>
@@ -16138,6 +16150,7 @@
 	<item id="8084" article="a" name="springsprout rod">
 		<attribute key="description" value="It is filled with the energy of growing plants"/>
 		<attribute key="weaponType" value="wand"/>
+		<attribute key="attack" value="36"/>
 		<attribute key="shootType" value="smallearth"/>
 		<attribute key="range" value="3"/>
 		<attribute key="weight" value="2700"/>
@@ -16158,6 +16171,7 @@
 		<attribute key="weaponType" value="wand"/>
 		<attribute key="shootType" value="energy"/>
 		<attribute key="range" value="3"/>
+		<attribute key="attack" value="36"/>
 		<attribute key="weight" value="2550"/>
 		<attribute key="imbuementslot" value="2">
 			<attribute key="life leech" value="3"/>
@@ -16170,6 +16184,7 @@
 		<attribute key="weaponType" value="wand"/>
 		<attribute key="shootType" value="fire"/>
 		<attribute key="range" value="3"/>
+		<attribute key="attack" value="21"/>
 		<attribute key="weight" value="2700"/>
 		<attribute key="imbuementslot" value="2">
 			<attribute key="life leech" value="3"/>
@@ -16182,6 +16197,7 @@
 		<attribute key="weaponType" value="wand"/>
 		<attribute key="shootType" value="death"/>
 		<attribute key="range" value="3"/>
+		<attribute key="attack" value="42"/>
 		<attribute key="weight" value="2850"/>
 		<attribute key="imbuementslot" value="2">
 			<attribute key="life leech" value="3"/>
@@ -22617,6 +22633,7 @@
 		<attribute key="description" value="This wand controls the rift between time and space"/>
 		<attribute key="weaponType" value="wand"/>
 		<attribute key="shootType" value="death"/>
+		<attribute key="attack" value="36"/>
 		<attribute key="range" value="3"/>
 		<attribute key="weight" value="2800"/>
 	</item>
@@ -22851,6 +22868,7 @@
 		<attribute key="description" value="It feels cold and smooth"/>
 		<attribute key="weaponType" value="wand"/>
 		<attribute key="shootType" value="smallice"/>
+		<attribute key="attack" value="38"/>
 		<attribute key="showduration" value="0"/>
 		<attribute key="duration" value="604800"/>
 		<attribute key="decayTo" value="0"/>
@@ -22892,6 +22910,7 @@
 		<attribute key="description" value="It feels cold and smooth"/>
 		<attribute key="weaponType" value="wand"/>
 		<attribute key="shootType" value="energy"/>
+		<attribute key="attack" value="38"/>
 		<attribute key="showduration" value="0"/>
 		<attribute key="duration" value="604800"/>
 		<attribute key="decayTo" value="0"/>
@@ -25314,6 +25333,7 @@
 		<attribute key="description" value="It reveals devastating energy arcs"/>
 		<attribute key="weaponType" value="wand"/>
 		<attribute key="shootType" value="energy"/>
+		<attribute key="attack" value="44"/>
 		<attribute key="magicpoints" value="1"/>
 		<attribute key="range" value="4"/>
 		<attribute key="weight" value="3700"/>
@@ -25446,6 +25466,7 @@
 		<attribute key="description" value="It contains the everblazing fire"/>
 		<attribute key="weaponType" value="wand"/>
 		<attribute key="shootType" value="fire"/>
+		<attribute key="attack" value="44"/>
 		<attribute key="magicpoints" value="1"/>
 		<attribute key="range" value="4"/>
 		<attribute key="weight" value="3700"/>
@@ -25462,6 +25483,7 @@
 		<attribute key="description" value="A true staff of old, spitting slimy orbs"/>
 		<attribute key="weaponType" value="wand"/>
 		<attribute key="shootType" value="smallearth"/>
+		<attribute key="attack" value="44"/>
 		<attribute key="magicpoints" value="1"/>
 		<attribute key="range" value="4"/>
 		<attribute key="weight" value="3700"/>
@@ -25471,6 +25493,7 @@
 		<attribute key="weaponType" value="wand"/>
 		<attribute key="shootType" value="smallice"/>
 		<attribute key="magicpoints" value="1"/>
+		<attribute key="attack" value="44"/>
 		<attribute key="range" value="4"/>
 		<attribute key="weight" value="3700"/>
 	</item>
@@ -30049,6 +30072,14 @@
 	<item fromid="19925" toid="19931" article="the" name="dreamcatcher device"/>
 	<item fromid="19932" toid="19969" article="a" name="stone pavement"/>
 	<item fromid="19970" toid="19981" article="a" name="flowing water"/>
+	<item id="19985" name="nothing special"/>
+	<item id="19982" name="nothing special"/>
+	<item id="19983" name="nothing special"/>
+	<item id="19987" name="nothing special"/>
+	<item id="19986" name="nothing special"/>
+	<item id="19988" name="nothing special"/>
+	<item id="19989" name="nothing special"/>
+	<item id="19990" name="nothing special"/>
 	<item fromid="20016" toid="20025" article="a" name="flowing water"/>
 	<item fromid="20026" toid="20027" article="an" name="unknown item"/>
 	<item id="20028" name="RESERVED SPRITE"/>
@@ -33708,6 +33739,7 @@
 		<attribute key="weaponType" value="wand"/>
 		<attribute key="shootType" value="smallearth"/>
 		<attribute key="range" value="3"/>
+		<attribute key="attack" value="36"/>
 		<attribute key="weight" value="2900"/>
 		<attribute key="imbuementslot" value="2">
 			<attribute key="life leech" value="3"/>
@@ -35141,7 +35173,7 @@
 		<attribute key="healthgain" value="3"/>
 		<attribute key="speed" value="60"/>
 		<attribute key="duration" value="3600"/>
-		<attribute key="transformdeequipto" value="23477"/> 
+		<attribute key="transformdeequipto" value="23477"/>
 		<attribute key="decayTo" value="0"/>
 		<attribute key="armor" value="2"/>
 		<attribute key="weight" value="1500"/>
@@ -37078,6 +37110,7 @@
 		<attribute key="description" value="It's a gnarly branch with a gleaming blue blossom"/>
 		<attribute key="weaponType" value="wand"/>
 		<attribute key="shootType" value="energy"/>
+		<attribute key="attack" value="45"/>
 		<attribute key="magicpoints" value="2"/>
 		<attribute key="range" value="4"/>
 		<attribute key="weight" value="3200"/>
@@ -37245,6 +37278,7 @@
 	<item id="25760" article="a" name="wand of darkness">
 		<attribute key="description" value="Temporary magic powers enchant this staff."/>
 		<attribute key="weaponType" value="wand"/>
+		<attribute key="attack" value="39"/>
 		<attribute key="shootType" value="death"/>
 		<attribute key="stopduration" value="0"/>
 		<attribute key="showduration" value="1"/>
@@ -39209,6 +39243,7 @@
 		<attribute key="magicpoints" value="2"/>
 		<attribute key="range" value="4"/>
 		<attribute key="weight" value="3500"/>
+		<attribute key="attack" value="52"/>
 		<attribute key="imbuementslot" value="2">
 			<attribute key="life leech" value="3"/>
 			<attribute key="mana leech" value="3"/>
@@ -39222,6 +39257,7 @@
 		<attribute key="magicpoints" value="2"/>
 		<attribute key="range" value="4"/>
 		<attribute key="weight" value="3500"/>
+		<attribute key="attack" value="52"/>
 		<attribute key="imbuementslot" value="2">
 			<attribute key="life leech" value="3"/>
 			<attribute key="mana leech" value="3"/>
@@ -41119,6 +41155,7 @@
 		<attribute key="shootType" value="earth"/>
 		<attribute key="absorbpercentenergy" value="8"/>
 		<attribute key="magicpoints" value="3"/>
+		<attribute key="attack" value="62"/>
 		<attribute key="range" value="5"/>
 		<attribute key="weight" value="3700"/>
 		<attribute key="imbuementslot" value="2">
@@ -41134,6 +41171,7 @@
 		<attribute key="absorbpercentfire" value="8"/>
 		<attribute key="magicpoints" value="3"/>
 		<attribute key="range" value="5"/>
+		<attribute key="attack" value="62"/>
 		<attribute key="weight" value="3300"/>
 		<attribute key="imbuementslot" value="2">
 			<attribute key="life leech" value="3"/>
@@ -41634,6 +41672,7 @@
 		<attribute key="absorbpercentpoison" value="5"/>
 		<attribute key="magicpoints" value="2"/>
 		<attribute key="range" value="6"/>
+		<attribute key="attack" value="50"/>
 		<attribute key="weight" value="3200"/>
 		<attribute key="imbuementslot" value="2">
 			<attribute key="life leech" value="3"/>
@@ -41647,6 +41686,7 @@
 		<attribute key="shootType" value="smallice"/>
 		<attribute key="absorbpercentholy" value="8"/>
 		<attribute key="magicpoints" value="3"/>
+		<attribute key="attack" value="56"/>
 		<attribute key="range" value="5"/>
 		<attribute key="weight" value="3300"/>
 		<attribute key="imbuementslot" value="2">
@@ -42318,6 +42358,7 @@
 		<attribute key="absorbpercentenergy" value="10"/>
 		<attribute key="magicpoints" value="2"/>
 		<attribute key="range" value="5"/>
+		<attribute key="attack" value="50"/>
 		<attribute key="weight" value="2700"/>
 		<attribute key="imbuementslot" value="2">
 			<attribute key="life leech" value="3"/>
@@ -43822,6 +43863,7 @@
 		<attribute key="criticalhitdamage" value="35"/>
 		<attribute key="criticalhitchance" value="10"/>
 		<attribute key="range" value="4"/>
+		<attribute key="attack" value="60"/>
 		<attribute key="weight" value="1900"/>
 		<attribute key="imbuementslot" value="2">
 			<attribute key="life leech" value="3"/>
@@ -43836,6 +43878,7 @@
 		<attribute key="lifeleechamount" value="18"/>
 		<attribute key="lifeleechchance" value="100"/>
 		<attribute key="range" value="5"/>
+		<attribute key="attack" value="60"/>
 		<attribute key="weight" value="2500"/>
 		<attribute key="imbuementslot" value="2">
 			<attribute key="mana leech" value="3"/>
@@ -48393,6 +48436,7 @@
 		<attribute key="shootType" value="death"/>
 		<attribute key="absorbpercentdeath" value="12"/>
 		<attribute key="magicpoints" value="5"/>
+		<attribute key="attack" value="65"/>
 		<attribute key="criticalhitdamage" value="10"/>
 		<attribute key="criticalhitchance" value="10"/>
 		<attribute key="range" value="6"/>
@@ -48407,6 +48451,7 @@
 		<attribute key="weaponType" value="wand"/>
 		<attribute key="shootType" value="smallice"/>
 		<attribute key="absorbpercentice" value="12"/>
+		<attribute key="attack" value="65"/>
 		<attribute key="magicpoints" value="5"/>
 		<attribute key="manaleechamount" value="3"/>
 		<attribute key="manaleechchance" value="100"/>
@@ -48716,6 +48761,7 @@
 		<attribute key="criticalhitdamage" value="35"/>
 		<attribute key="criticalhitchance" value="10"/>
 		<attribute key="range" value="5"/>
+		<attribute key="attack" value="55"/>
 		<attribute key="weight" value="2600"/>
 		<attribute key="imbuementslot" value="2">
 			<attribute key="mana leech" value="3"/>
@@ -48728,6 +48774,7 @@
 		<attribute key="shootType" value="smallice"/>
 		<attribute key="magicpoints" value="2"/>
 		<attribute key="lifeleechamount" value="18"/>
+		<attribute key="attack" value="55"/>
 		<attribute key="lifeleechchance" value="100"/>
 		<attribute key="range" value="4"/>
 		<attribute key="weight" value="2100"/>
@@ -49542,6 +49589,7 @@
 		<attribute key="shootType" value="smallice"/>
 		<attribute key="absorbpercentpoison" value="3"/>
 		<attribute key="magicpoints" value="1"/>
+		<attribute key="attack" value="48"/>
 		<attribute key="range" value="4"/>
 		<attribute key="weight" value="3700"/>
 		<attribute key="imbuementslot" value="2">
@@ -49556,6 +49604,7 @@
 		<attribute key="absorbpercentice" value="3"/>
 		<attribute key="magicpoints" value="1"/>
 		<attribute key="range" value="4"/>
+		<attribute key="attack" value="48"/>
 		<attribute key="weight" value="3200"/>
 		<attribute key="imbuementslot" value="2">
 			<attribute key="mana leech" value="3"/>
@@ -50326,6 +50375,7 @@
 		<attribute key="absorbpercentenergy" value="4"/>
 		<attribute key="magicpoints" value="2"/>
 		<attribute key="range" value="4"/>
+		<attribute key="attack" value="53"/>
 		<attribute key="weight" value="3600"/>
 		<attribute key="imbuementslot" value="2">
 			<attribute key="mana leech" value="3"/>
@@ -50339,6 +50389,7 @@
 		<attribute key="shootType" value="fire"/>
 		<attribute key="absorbpercentenergy" value="4"/>
 		<attribute key="magicpoints" value="2"/>
+		<attribute key="attack" value="54"/>
 		<attribute key="range" value="4"/>
 		<attribute key="weight" value="3700"/>
 		<attribute key="imbuementslot" value="2">
@@ -50409,6 +50460,7 @@
 		<attribute key="absorbpercentpoison" value="4"/>
 		<attribute key="magicpoints" value="2"/>
 		<attribute key="range" value="4"/>
+		<attribute key="attack" value="53"/>
 		<attribute key="weight" value="3500"/>
 		<attribute key="imbuementslot" value="2">
 			<attribute key="mana leech" value="3"/>
@@ -50425,6 +50477,7 @@
 		<attribute key="shootType" value="ice"/>
 		<attribute key="absorbpercentpoison" value="4"/>
 		<attribute key="magicpoints" value="2"/>
+		<attribute key="attack" value="54"/>
 		<attribute key="range" value="4"/>
 		<attribute key="weight" value="3600"/>
 		<attribute key="imbuementslot" value="2">

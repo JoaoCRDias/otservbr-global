@@ -491,6 +491,7 @@ if NpcHandler == nil then
 		if npc:isInTalkRange(Player(player):getPosition()) then
 			if not self:checkInteraction(npc, player) then
 				self:greet(npc, player, message)
+				self:tradeRequest(npc, player, message)
 				return true
 			end
 		end

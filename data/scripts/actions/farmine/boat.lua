@@ -1,8 +1,8 @@
 local config = {
-    [57601] = Position(33326, 31351, 7),
-    [57602] = Position(33382, 31292, 7),
-    [57603] = Position(33374, 31310, 7),
-    [64007] = Position(33346, 31349, 7),
+    [57601] = Position(1100, 930, 7),
+    [57602] = Position(1269, 921, 7),
+    [57603] = Position(1260, 939, 7),
+    [57604] = Position(1231, 977, 7),
 }
 
 local boat = Action()
@@ -18,5 +18,5 @@ function boat.onUse(player, item, fromPosition, itemEx, toPosition)
     end
 end
 
-boat:aid(57601, 57602, 57603, 64007)
+boat:aid(57601, 57602, 57603, 57604)
 boat:register()

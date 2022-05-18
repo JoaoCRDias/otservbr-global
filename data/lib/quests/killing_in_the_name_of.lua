@@ -19,796 +19,634 @@ REWARD_STORAGE = 4
 REWARD_POINT = 5
 REWARD_ITEM = 6
 
-QUESTSTORAGE_BASE = 1500
-JOIN_STOR = 100157
-KILLSSTORAGE_BASE = 65000
-REPEATSTORAGE_BASE = 48950
-POINTSSTORAGE = 2500
+QUESTSTORAGE_BASE = 38500
+JOIN_STOR = 38400
+KILLSSTORAGE_BASE = 38600
+POINTSSTORAGE = 38401
+BOSS_POINTS = 38402
 tasks =
 {
 	[1] = {
-		killsRequired = 100,
-		raceName = "Trolls",
-		level = {6, 19},
-		premium = true,
+		killsRequired = 500,
+		raceName = "Heroes",
 		creatures = {
-			"troll",
-			"troll champion",
-			"island troll",
-			"swamp troll"
+			"hero"
 		},
 		rewards = {
-			{type = "exp", value = {200}},
-			{type = "money", value = {200}}
+			{type = "exp", value = {1000000}},
+			{type = "money", value = {100000}},
+			{type = "storage", value = {BOSS_POINTS, 1}},
 		}
 	},
 	[2] = {
-		killsRequired = 150,
-		raceName = "Goblins",
-		level = {6, 19},
-		premium = true,
-		creatures = {
-			"goblin",
-			"goblin assassin",
-			"goblin leader"
-		},
-		rewards = {
-			{type = "exp", value = {300}},
-			{type = "money", value = {250}}
-		}
-	},
-	[3] = {
-		killsRequired = 300,
-		raceName = "Crocodiles",
-		level = {6, 49},
-		premium = true,
-		creatures = {
-			"crocodile"
-		},
-		rewards = {
-			{type = "exp", value = {800}},
-			{type = "achievement", value = {"Blood-Red Snapper"}},
-			{type = "storage", value = {34100, 1}},
-			{type = "points", value = {1}}
-		}
-	},
-	[4] = {
-		killsRequired = 300,
-		raceName = "Badgers",
-		level = {6, 49},
-		premium = true,
-		creatures = {
-			"badger"
-		},
-		rewards = {
-			{type = "exp", value = {500}},
-			{type = "points", value = {1}}
-		}
-	},
-	[5] = {
-		killsRequired = 300,
-		raceName = "Tarantulas",
-		level = {6, 49},
-		premium = true,
-		creatures = {
-			"tarantula"
-		},
-		rewards = {
-			{type = "exp", value = {1500}},
-			{type = "achievement", value = {"No More Hiding"}},
-			{type = "storage", value = {34101, 1}},
-			{type = "points", value = {2}}
-		}
-	},
-	[6] = {
-		killsRequired = 150,
-		raceName = "Carniphilas",
-		level = {6, 999},
-		premium = true,
-		creatures = {
-			"carniphila"
-		},
-		rewards = {
-			{type = "exp", value = {2500}},
-			{type = "achievement", value = {"Rootless Behaviour"}},
-			{type = "storage", value = {34102, 1}},
-			{type = "points", value = {3}}
-		}
-	},
-	[7] = {
-		killsRequired = 200,
-		raceName = "Stone Golems",
-		level = {6, 49},
-		premium = true,
-		creatures = {
-			"stone golem"
-		},
-		rewards = {
-			{type = "exp", value = {2000}},
-			{type = "points", value = {3}}
-		}
-	},
-	[8] = {
-		killsRequired = 300,
-		raceName = "Mammoths",
-		level = {6, 49},
-		premium = true,
-		creatures = {
-			"mammoth"
-		},
-		rewards = {
-			{type = "exp", value = {4000}},
-			{type = "achievement", value = {"Meat Skewer"}},
-			{type = "storage", value = {34103, 1}},
-			{type = "points", value = {3}}
-		}
-	},
-	[9] = {
-		killsRequired = 300,
-		raceName = "Gnarlhounds",
-		level = {6, 49},
-		premium = true,
-		creatures = {
-			"gnarlhound"
-		},
-		rewards = {
-			{type = "exp", value = {1000}},
-			{type = "points", value = {2}}
-		}
-	},
-	[10] = {
-		killsRequired = 300,
-		raceName = "Terramites",
-		level = {6, 49},
-		premium = true,
-		creatures = {
-			"terramite"
-		},
-		rewards = {
-			{type = "exp", value = {1000}},
-			{type = "points", value = {2}}
-		}
-	},
-	[11] = {
-		killsRequired = 300,
-		raceName = "Apes",
-		level = {6, 49},
-		premium = true,
-		creatures = {
-			"kongra",
-			"sibang",
-			"merklin"
-		},
-		rewards = {
-			{type = "exp", value = {1000}},
-			{type = "points", value = {2}}
-		}
-	},
-	[12] = {
-		killsRequired = 300,
-		raceName = "Thornback Tortoises",
-		level = {6, 49},
-		premium = true,
-		creatures = {
-			"thornback tortoise"
-		},
-		rewards = {
-			{type = "exp", value = {1500}},
-			{type = "points", value = {2}}
-		}
-	},
-	[13] = {
-		killsRequired = 300,
-		raceName = "Gargoyles",
-		level = {6, 49},
-		premium = true,
-		creatures = {
-			"gargoyle"
-		},
-		rewards = {
-			{type = "exp", value = {1500}}
-		}
-	},
-	[14] = {
-		killsRequired = 300,
-		raceName = "Ice Golems",
-		level = {50, 79},
-		premium = true,
-		creatures = {
-			"ice golem"
-		},
-		rewards = {
-			{type = "exp", value = {12000}},
-			{type = "achievement", value = {"Breaking The Ice"}},
-			{type = "storage", value = {34104, 1}},
-			{type = "points", value = {2}}
-		}
-	},
-	[15] = {
-		killsRequired = 400,
-		raceName = "Quara Scouts",
-		level = {50, 999},
-		premium = true,
-		creatures = {
-			"quara pincher scout",
-			"quara predator scout",
-			"quara hydromancer scout",
-			"quara constrictor scout",
-			"quara mantassin scout"
-		},
-		rewards = {
-			{type = "exp", value = {10000}},
-			{type = "points", value = {2}}
-		}
-	},
-	[16] = {
-		killsRequired = 400,
-		raceName = "Mutated Rats",
-		level = {50, 999},
-		premium = true,
-		creatures = {
-			"mutated rat"
-		},
-		rewards = {
-			{type = "exp", value = {10000}},
-			{type = "achievement", value = {"Twisted Mutation"}},
-			{type = "storage", value = {34105, 1}},
-			{type = "points", value = {2}}
-		}
-	},
-	[17] = {
-		killsRequired = 250,
+		killsRequired = 500,
 		raceName = "Ancient Scarabs",
-		level = {50, 999},
-		premium = true,
 		creatures = {
 			"ancient scarab"
 		},
 		rewards = {
-			{type = "exp", value = {15000}},
-			{type = "achievement", value = {"Crawling Death"}},
-			{type = "storage", value = {34106, 1}},
-			{type = "points", value = {2}}
+			{type = "exp", value = {1000000}},
+			{type = "money", value = {100000}},
+			{type = "storage", value = {BOSS_POINTS, 1}},
 		}
 	},
-	[18] = {
-		killsRequired = 300,
-		raceName = "Wyverns",
-		level = {50, 999},
-		premium = true,
-		creatures = {
-			"wyvern"
-		},
-		rewards = {
-			{type = "exp", value = {12000}},
-			{type = "points", value = {2}}
-		}
-	},
-	[19] = {
-		killsRequired = 300,
-		raceName = "Lancer Beetles",
-		level = {50, 79},
-		premium = true,
-		creatures = {
-			"lancer beetle"
-		},
-		rewards = {
-			{type = "exp", value = {8000}},
-			{type = "points", value = {2}}
-		}
-	},
-	[20] = {
-		killsRequired = 400,
-		raceName = "Wailing Widows",
-		level = {50, 999},
-		premium = true,
-		creatures = {
-			"wailing widow"
-		},
-		rewards = {
-			{type = "exp", value = {12000}},
-			{type = "points", value = {3}}
-		}
-	},
-	[21] = {
-		killsRequired = 250,
-		raceName = "Killer Caimans",
-		level = {50, 999},
-		premium = true,
-		creatures = {
-			"killer caiman"
-		},
-		rewards = {
-			{type = "exp", value = {10000}},
-			{type = "points", value = {2}}
-		}
-	},
-	[22] = {
-		killsRequired = 300,
-		raceName = "Bonebeasts",
-		level = {50, 999},
-		premium = true,
-		creatures = {
-			"bonebeast"
-		},
-		rewards = {
-			{type = "exp", value = {12000}},
-			{type = "achievement", value = {"Spareribs for Dinner"}},
-			{type = "storage", value = {34107, 1}},
-			{type = "points", value = {2}}
-		}
-	},
-	[23] = {
-		killsRequired = 300,
-		raceName = "Crystal Spiders",
-		level = {50, 999},
-		creatures = {
-		"crystal spider"},
-		premium = true,
-		rewards = {
-			{type = "exp", value = {15000}},
-			{type = "achievement", value = {"Arachnoise"}},
-			{type = "storage", value = {34108, 1}},
-			{type = "points", value = {3}}
-		}
-	},
-	[24] = {
-		killsRequired = 300,
-		raceName = "Mutated Tigers",
-		level = {50, 999},
-		premium = true,
-		creatures = {
-			"mutated tiger"
-		},
-		rewards = {
-			{type = "exp", value = {12000}},
-			{type = "points", value = {2}}
-		}
-	},
-	[25] = {
-		killsRequired = 600,
-		raceName = "Underwater Quara",
-		level = {80, 999},
-		premium = true,
-		creatures = {
-			"quara hydromancer",
-			"quara predator",
-			"quara constrictor",
-			"quara mantassin",
-			"quara pincher"
-		},
-		rewards = {
-			{type = "exp", value = {15000}},
-			{type = "achievement", value = {"Back into the Abyss"}},
-			{type = "storage", value = {34109, 1}},
-			{type = "points", value = {3}}
-		}
-	},
-	[26] = {
+	[3] = {
 		killsRequired = 500,
-		raceName = "Giant Spiders",
-		level = {80, 999},
-		premium = true,
+		raceName = "Minotaurs",
 		creatures = {
-			"giant spider"
+			"minotaur",
+			"minotaur guard",
+			"minotaur mage"
 		},
 		rewards = {
-			{type = "exp", value = {20000}},
-			{type = "achievement", value = {"Choking on Her Venom"}},
-			{type = "storage", value = {34110, 1}},
-			{type = "points", value = {3}}
+			{type = "exp", value = {1000000}},
+			{type = "money", value = {100000}},
+			{type = "storage", value = {BOSS_POINTS, 1}},
 		}
 	},
-	[27] = {
-		killsRequired = 300,
-		raceName = "Werewolves",
-		level = {80, 999},
-		premium = true,
+	[4] = {
+		killsRequired = 500,
+		raceName = "Wyrms",
 		creatures = {
-			"werewolf"
+			"wyrm",
+			"elder wyrm"
 		},
 		rewards = {
-			{type = "exp", value = {30000}},
-			{type = "achievement", value = {"Howly Silence"}},
-			{type = "storage", value = {34111, 1}},
-			{type = "points", value = {4}}
+			{type = "exp", value = {1000000}},
+			{type = "money", value = {100000}},
+			{type = "storage", value = {BOSS_POINTS, 1}},
 		}
 	},
-	[28] = {
-		killsRequired = 400,
+	[5] = {
+		killsRequired = 500,
+		raceName = "Lizards",
+		creatures = {
+			"lizard high guard",
+			"lizard legionnaire",
+			"lizard dragon priest"
+		},
+		rewards = {
+			{type = "exp", value = {1000000}},
+			{type = "money", value = {100000}},
+			{type = "storage", value = {BOSS_POINTS, 1}},
+		}
+	},
+	[6] = {
+		killsRequired = 500,
 		raceName = "Nightmares",
-		level = {80, 999},
-		premium = true,
 		creatures = {
-			"nightmare",
-			"nightmare scion"
+			"nightmare scion",
+			"nightmare"
 		},
 		rewards = {
-			{type = "exp", value = {25000}},
-			{type = "achievement", value = {"Dream is Over"}},
-			{type = "storage", value = {34112, 1}},
-			{type = "points", value = {3}}
+			{type = "exp", value = {1000000}},
+			{type = "money", value = {100000}},
+			{type = "storage", value = {BOSS_POINTS, 1}},
 		}
 	},
-	[29] = {
-		killsRequired = 600,
-		raceName = "Hellspawns",
-		level = {80, 999},
-		premium = true,
+	[7] = {
+		killsRequired = 500,
+		raceName = "Vampire",
+		creatures = {
+			"vampire bride",
+			"vampire viscount",
+			"vampire"
+		},
+		rewards = {
+			{type = "exp", value = {1000000}},
+			{type = "money", value = {100000}},
+			{type = "storage", value = {BOSS_POINTS, 1}},
+		}
+	},
+	[8] = {
+		killsRequired = 500,
+		raceName = "Frazzlemaw and Silencer Feyrist",
+		creatures = {
+			"weakened frazzlemaw",
+			"enfeebled silencer"
+		},
+		rewards = {
+			{type = "exp", value = {1000000}},
+			{type = "money", value = {100000}},
+			{type = "storage", value = {BOSS_POINTS, 1}},
+		}
+	},
+	[9] = {
+		killsRequired = 500,
+		raceName = "Glooth Bandit and Brigand",
+		creatures = {
+			"glooth bandit",
+			"glooth brigand"
+		},
+		rewards = {
+			{type = "exp", value = {1000000}},
+			{type = "money", value = {100000}},
+			{type = "storage", value = {BOSS_POINTS, 1}},
+		}
+	},
+	[10] = {
+		killsRequired = 500,
+		raceName = "Hellspawn",
 		creatures = {
 			"hellspawn"
 		},
 		rewards = {
-			{type = "exp", value = {25000}},
-			{type = "achievement", value = {"Scorched Flames"}},
-			{type = "storage", value = {34113, 1}}
+			{type = "exp", value = {1000000}},
+			{type = "money", value = {100000}},
+			{type = "storage", value = {BOSS_POINTS, 1}},
 		}
 	},
-	[30] = {
-		killsRequired = 800,
-		raceName = "High Class Lizards",
-		level = {80, 999},
-		premium = true,
-		creatures = {
-			"lizard chosen",
-			"lizard dragon priest",
-			"lizard high guard",
-			"lizard legionnaire"
-		},
-		rewards = {
-			{type = "exp", value = {30000}},
-			{type = "achievement", value = {"Zzztill Zzztanding!"}},
-			{type = "storage", value = {34114, 1}},
-			{type = "points", value = {3}}
-		}
-	},
-	[31] = {
-		killsRequired = 600,
-		raceName = "Stampors",
-		level = {80, 999},
-		premium = true,
-		creatures = {
-			"stampor"
-		},
-		rewards = {
-			{type = "exp", value = {20000}},
-			{type = "achievement", value = {"Stepped on a Big Toe"}},
-			{type = "storage", value = {34115, 1}},
-			{type = "points", value = {3}}
-		}
-	},
-	[32] = {
+	[11] = {
 		killsRequired = 500,
-		raceName = "Brimstone Bugs",
-		level = {80, 999},
-		premium = true,
-		creatures = {
-			"brimstone bug"
-		},
-		rewards = {
-			{type = "exp", value = {15000}},
-			{type = "achievement", value = {"Something Smells"}},
-			{type = "storage", value = {34116, 1}},
-			{type = "points", value = {3}}
-		}
-	},
-	[33] = {
-		killsRequired = 400,
-		raceName = "Mutated Bats",
-		level = {80, 999},
-		premium = true,
-		creatures = {
-			"mutated bat"
-		},
-		rewards = {
-			{type = "exp", value = {20000}},
-			{type = "achievement", value = {"Kapow!"}},
-			{type = "storage", value = {34117, 1}},
-			{type = "points", value = {2}}
-		}
-	},
-	[34] = {
-		killsRequired = 650,
-		raceName = "Hydras",
-		level = {130, 9999},
-		premium = true,
+		raceName = "Hydra",
 		creatures = {
 			"hydra"
 		},
 		rewards = {
-			{type = "exp", value = {30000}},
-			{type = "achievement", value = {"One Less"}},
-			{type = "storage", value = {34118, 1}},
-			{type = "points", value = {3}}
+			{type = "exp", value = {1000000}},
+			{type = "money", value = {100000}},
+			{type = "storage", value = {BOSS_POINTS, 1}},
 		}
 	},
-	[35] = {
-		killsRequired = 800,
-		raceName = "Serpent Spawns",
-		level = {130, 9999},
-		premium = true,
-		creatures = {
-			"serpent spawn"
-		},
-		rewards = {
-			{type = "exp", value = {30000}},
-			{type = "achievement", value = {"Hissing Downfall"}},
-			{type = "storage", value = {34119, 1}},
-			{type = "points", value = {4}}
-		}
-	},
-	[36] = {
+	[12] = {
 		killsRequired = 500,
-		raceName = "Medusas",
-		level = {130, 9999},
-		premium = true,
+		raceName = "Serpent Spawn and Medusa",
 		creatures = {
+			"serpent spawn",
 			"medusa"
 		},
 		rewards = {
-			{type = "exp", value = {40000}},
-			{type = "achievement", value = {"The Serpent's Bride"}},
-			{type = "storage", value = {34120, 1}},
-			{type = "points", value = {5}}
+			{type = "exp", value = {1000000}},
+			{type = "money", value = {100000}},
+			{type = "storage", value = {BOSS_POINTS, 1}},
 		}
 	},
-	[37] = {
-		killsRequired = 700,
-		raceName = "Behemoths",
-		level = {130, 9999},
-		premium = true,
-		creatures = {
-			"behemoth"
-		},
-		rewards = {
-			{type = "exp", value = {30000}},
-			{type = "achievement", value = {"Just Cracked Me Up!"}},
-			{type = "storage", value = {34121, 1}},
-			{type = "points", value = {4}}
-		}
-	},
-	[38] = {
-		killsRequired = 900,
-		raceName = "Sea Serpents and Young Sea Serpents",
-		level = {130, 9999},
-		premium = true,
-		creatures = {
-			"sea serpent",
-			"young sea serpent"
-		},
-		rewards = {
-			{type = "exp", value = {30000}},
-			{type = "achievement", value = {"The Drowned Sea God"}},
-			{type = "storage", value = {34122, 1}},
-			{type = "points", value = {4}}
-		}
-	},
-	[39] = {
-		killsRequired = 250,
-		raceName = "Hellhounds",
-		level = {130, 9999},
-		premium = true,
-		creatures = {
-			"hellhound"
-		},
-		rewards = {
-			{type = "exp", value = {40000}},
-			{type = "achievement", value = {"The Gates of Hell"}},
-			{type = "storage", value = {34123, 1}},
-			{type = "points", value = {5}}
-		}
-	},
-	[40] = {
+	[13] = {
 		killsRequired = 500,
-		raceName = "Ghastly Dragons",
-		level = {130, 9999},
-		premium = true,
+		raceName = "Lizard Chosen",
 		creatures = {
-			"ghastly dragon"
+			"lizard chosen"
 		},
 		rewards = {
-			{type = "exp", value = {30000}},
-			{type = "achievement", value = {"Beautiful Agony"}},
-			{type = "storage", value = {34124, 1}},
-			{type = "points", value = {5}}
+			{type = "exp", value = {1000000}},
+			{type = "money", value = {100000}},
+			{type = "storage", value = {BOSS_POINTS, 1}},
 		}
 	},
-	[41] = {
-		killsRequired = 900,
-		raceName = "Drakens",
-		level = {130, 9999},
-		premium = true,
+	[14] = {
+		killsRequired = 500,
+		raceName = "Kollos",
 		creatures = {
-			"draken spellweaver",
-			"draken warmaster",
-			"draken abomination",
-		"draken elite"} ,
-		rewards = {
-			{type = "exp", value = {30000}},
-			{type = "achievement", value = {"Enter zze Draken!"}},
-			{type = "storage", value = {34125, 1}},
-			{type = "points", value = {3}}
-		}
-	},
-	[42] = {
-		killsRequired = 650,
-		raceName = "Destroyers",
-		level = {130, 9999},
-		premium = true,
-		creatures = {
-			"destroyer"
+			"kollos",
+			"spidris",
+			"spidris elite"
 		},
 		rewards = {
-			{type = "exp", value = {30000}},
-			{type = "achievement", value = {"Best there was!"}},
-			{type = "storage", value = {34126, 1}},
-			{type = "points", value = {4}}
+			{type = "exp", value = {1000000}},
+			{type = "money", value = {100000}},
+			{type = "storage", value = {BOSS_POINTS, 1}},
 		}
 	},
-	[43] = {
-		killsRequired = 400,
-		raceName = "Undead Dragons",
-		level = {130, 9999},
-		premium = true,
+	[15] = {
+		killsRequired = 500,
+		raceName = "Ravenous Lava Lurker",
 		creatures = {
-			"undead dragon"
+			"ravenous lava lurker"
 		},
 		rewards = {
-			{type = "exp", value = {50000}},
-			{type = "achievement", value = {"Back from the Dead"}},
-			{type = "storage", value = {34127, 1}},
-			{type = "points", value = {6}}
+			{type = "exp", value = {1000000}},
+			{type = "money", value = {100000}},
+			{type = "storage", value = {BOSS_POINTS, 1}},
 		}
 	},
-	[44] = {
-		killsRequired = 6666,
-		raceName = "Demons",
-		level = {130, 9999}, rank = RANK_ELITEHUNTER,
-		premium = true,
+	[16] = {
+		killsRequired = 500,
+		raceName = "Exotic Cave Spider",
+		creatures = {
+			"exotic cave spider"
+		},
+		rewards = {
+			{type = "exp", value = {1000000}},
+			{type = "money", value = {100000}},
+			{type = "storage", value = {BOSS_POINTS, 1}},
+		}
+	},
+	[17] = {
+		killsRequired = 500,
+		raceName = "Pirat",
+		creatures = {
+			"pirat scoundrel",
+			"pirat cutthroat"
+		},
+		rewards = {
+			{type = "exp", value = {1000000}},
+			{type = "money", value = {100000}},
+			{type = "storage", value = {BOSS_POINTS, 1}},
+		}
+	},
+	[18] = {
+		killsRequired = 500,
+		raceName = "Stonerefiner",
+		creatures = {
+			"stonerefiner"
+		},
+		rewards = {
+			{type = "exp", value = {1000000}},
+			{type = "money", value = {100000}},
+			{type = "storage", value = {BOSS_POINTS, 1}},
+		}
+	},
+	[19] = {
+		killsRequired = 500,
+		raceName = "Crypt Warden",
+		creatures = {
+			"sphinx",
+			"crypt warden"
+		},
+		rewards = {
+			{type = "exp", value = {10000000}},
+			{type = "money", value = {1000000}},
+			{type = "storage", value = {BOSS_POINTS, 2}},
+		}
+	},
+	[20] = {
+		killsRequired = 500,
+		raceName = "Werehyaena",
+		creatures = {
+			"werehyaena",
+			"werehyaena shaman"
+		},
+		rewards = {
+			{type = "exp", value = {10000000}},
+			{type = "money", value = {1000000}},
+			{type = "storage", value = {BOSS_POINTS, 2}},
+		}
+	},
+	[21] = {
+		killsRequired = 500,
+		raceName = "Asuras",
+		creatures = {
+			"midnight asura",
+			"dawnfire asura",
+			"frost flower asura"
+		},
+		rewards = {
+			{type = "exp", value = {10000000}},
+			{type = "money", value = {1000000}},
+			{type = "storage", value = {BOSS_POINTS, 2}},
+		}
+	},
+	[22] = {
+		killsRequired = 500,
+		raceName = "Werelion",
+		creatures = {
+			"werelioness",
+			"werelion"
+		},
+		rewards = {
+			{type = "exp", value = {10000000}},
+			{type = "money", value = {1000000}},
+			{type = "storage", value = {BOSS_POINTS, 2}},
+		}
+	},
+	[23] = {
+		killsRequired = 500,
+		raceName = "Flimsy Lost Soul",
+		creatures = {
+			"flimsy lost soul",
+			"mean lost soul"
+		},
+		rewards = {
+			{type = "exp", value = {10000000}},
+			{type = "money", value = {1000000}},
+			{type = "storage", value = {BOSS_POINTS, 2}},
+		}
+	},
+	[24] = {
+		killsRequired = 500,
+		raceName = "Demon Outcast",
+		creatures = {
+			"demon outcast"
+		},
+		rewards = {
+			{type = "exp", value = {10000000}},
+			{type = "money", value = {1000000}},
+			{type = "storage", value = {BOSS_POINTS, 2}},
+		}
+	},
+	[25] = {
+		killsRequired = 500,
+		raceName = "Deathlings",
+		creatures = {
+			"deathling spellsinger",
+			"deathling scout"
+		},
+		rewards = {
+			{type = "exp", value = {10000000}},
+			{type = "money", value = {1000000}},
+			{type = "storage", value = {BOSS_POINTS, 2}},
+		}
+	},
+	[26] = {
+		killsRequired = 500,
+		raceName = "Ripper Spectre",
+		creatures = {
+			"ripper spectre"
+		},
+		rewards = {
+			{type = "exp", value = {10000000}},
+			{type = "money", value = {1000000}},
+			{type = "storage", value = {BOSS_POINTS, 2}},
+		}
+	},
+	[27] = {
+		killsRequired = 500,
+		raceName = "Burster Spectre",
+		creatures = {
+			"burster spectre"
+		},
+		rewards = {
+			{type = "exp", value = {10000000}},
+			{type = "money", value = {1000000}},
+			{type = "storage", value = {BOSS_POINTS, 2}},
+		}
+	},
+	[28] = {
+		killsRequired = 500,
+		raceName = "Gazer Spectre",
+		creatures = {
+			"gazer spectre"
+		},
+		rewards = {
+			{type = "exp", value = {10000000}},
+			{type = "money", value = {1000000}},
+			{type = "storage", value = {BOSS_POINTS, 2}},
+		}
+	},
+	[29] = {
+		killsRequired = 500,
+		raceName = "Falcons",
+		creatures = {
+			"falcon knight",
+			"falcon paladin"
+		},
+		rewards = {
+			{type = "exp", value = {10000000}},
+			{type = "money", value = {1000000}},
+			{type = "storage", value = {BOSS_POINTS, 2}},
+		}
+	},
+	[30] = {
+		killsRequired = 500,
+		raceName = "Cobras",
+		creatures = {
+			"cobra assassin",
+			"cobra scout",
+			"cobra vizier"
+		},
+		rewards = {
+			{type = "exp", value = {10000000}},
+			{type = "money", value = {1000000}},
+			{type = "storage", value = {BOSS_POINTS, 2}},
+		}
+	},
+	[31] = {
+		killsRequired = 500,
+		raceName = "Nightmare Isle",
+		creatures = {
+			"retching horror",
+			"choking fear"
+		},
+		rewards = {
+			{type = "exp", value = {10000000}},
+			{type = "money", value = {1000000}},
+			{type = "storage", value = {BOSS_POINTS, 2}},
+		}
+	},
+	[32] = {
+		killsRequired = 500,
+		raceName = "Roshamuul",
+		creatures = {
+			"frazzlemaw",
+			"guzzlemaw",
+			"silencer"
+		},
+		rewards = {
+			{type = "exp", value = {10000000}},
+			{type = "money", value = {1000000}},
+			{type = "storage", value = {BOSS_POINTS, 2}},
+		}
+	},
+	[33] = {
+		killsRequired = 500,
+		raceName = "Ice Elfs",
+		creatures = {
+			"crazed winter vanguard",
+			"crazed winter rearguard",
+			"soul-broken harbinger"
+		},
+		rewards = {
+			{type = "exp", value = {10000000}},
+			{type = "money", value = {1000000}},
+			{type = "storage", value = {BOSS_POINTS, 2}},
+		}
+	},
+	[34] = {
+		killsRequired = 500,
+		raceName = "Fire Elfs",
+		creatures = {
+			"insane siren",
+			"crazed summer vanguard",
+			"crazed summer rearguard"
+		},
+		rewards = {
+			{type = "exp", value = {10000000}},
+			{type = "money", value = {1000000}},
+			{type = "storage", value = {BOSS_POINTS, 2}},
+		}
+	},
+	[35] = {
+		killsRequired = 500,
+		raceName = "Demon",
 		creatures = {
 			"demon"
 		},
 		rewards = {
-			{type = "item", value = {9388, 1}},
-			{type = "storage", value = {41300, 1}}
+			{type = "exp", value = {10000000}},
+			{type = "money", value = {1000000}},
+			{type = "storage", value = {BOSS_POINTS, 2}},
+		}
+	},
+	[36] = {
+		killsRequired = 500,
+		raceName = "Hellspawn",
+		creatures = {
+			"hellspawn"
+		},
+		rewards = {
+			{type = "exp", value = {10000000}},
+			{type = "money", value = {1000000}},
+			{type = "storage", value = {BOSS_POINTS, 2}},
+		}
+	},
+	[37] = {
+		killsRequired = 500,
+		raceName = "Carnisylvans",
+		creatures = {
+			"dark carnisylvan",
+			"poisonous carnisylvan"
+		},
+		rewards = {
+			{type = "exp", value = {50000000}},
+			{type = "money", value = {2000000}},
+			{type = "storage", value = {BOSS_POINTS, 2}},
+		}
+	},
+	[38] = {
+		killsRequired = 500,
+		raceName = "Bashmus",
+		creatures = {
+			"bashmu",
+			"juvenile bashmu"
+		},
+		rewards = {
+			{type = "exp", value = {50000000}},
+			{type = "money", value = {2000000}},
+			{type = "storage", value = {BOSS_POINTS, 3}},
+		}
+	},
+	[39] = {
+		killsRequired = 500,
+		raceName = "Burning Gladiator",
+		creatures = {
+			"priestess of the wild sun",
+			"black sphinx acolyte",
+			"burning gladiator"
+		},
+		rewards = {
+			{type = "exp", value = {50000000}},
+			{type = "money", value = {2000000}},
+			{type = "storage", value = {BOSS_POINTS, 3}},
+		}
+	},
+	[40] = {
+		killsRequired = 500,
+		raceName = "Girtablilus",
+		creatures = {
+			"girtablilu warrior",
+			"venerable girtablilu"
+		},
+		rewards = {
+			{type = "exp", value = {50000000}},
+			{type = "money", value = {2000000}},
+			{type = "storage", value = {BOSS_POINTS, 3}},
+		}
+	},
+	[41] = {
+		killsRequired = 500,
+		raceName = "True Asuras",
+		creatures = {
+			"true midnight asura",
+			"true dawnfire asura",
+			"true frost flower asura"
+		},
+		rewards = {
+			{type = "exp", value = {50000000}},
+			{type = "money", value = {2000000}},
+			{type = "storage", value = {BOSS_POINTS, 3}},
+		}
+	},
+	[42] = {
+		killsRequired = 500,
+		raceName = "Skeleton Elite Warrior",
+		creatures = {
+			"skeleton elite warrior",
+			"undead elite gladiator"
+		},
+		rewards = {
+			{type = "exp", value = {50000000}},
+			{type = "money", value = {2000000}},
+			{type = "storage", value = {BOSS_POINTS, 3}},
+		}
+	},
+	[43] = {
+		killsRequired = 500,
+		raceName = "Many Faces",
+		creatures = {
+			"mirror image",
+			"many faces",
+			"distorted phantom"
+		},
+		rewards = {
+			{type = "exp", value = {50000000}},
+			{type = "money", value = {2000000}},
+			{type = "storage", value = {BOSS_POINTS, 3}},
+		}
+	},
+	[44] = {
+		killsRequired = 500,
+		raceName = "Infernal Demon",
+		creatures = {
+			"infernal demon",
+			"brachiodemon",
+			"infernal phantom"
+		},
+		rewards = {
+			{type = "exp", value = {50000000}},
+			{type = "money", value = {2000000}},
+			{type = "storage", value = {BOSS_POINTS, 3}},
 		}
 	},
 	[45] = {
 		killsRequired = 500,
-		raceName = "Green Djinns or Efreets",
-		level = {1, 9999}, storage = {12500, 1},
-		premium = true,
+		raceName = "Bony Sea Devil",
 		creatures = {
-			"green djinn",
-			"efreet"
+			"bony sea devil",
+			"turbulent elemental",
+			"capricious phantom",
+			"hazardous phantom"
 		},
 		rewards = {
-			{type = "exp", value = {10000}},
-			{type = "money", value = {5000}},
-			{type = "storage", value = {34128, 1}}
+			{type = "exp", value = {50000000}},
+			{type = "money", value = {2000000}},
+			{type = "storage", value = {BOSS_POINTS, 3}},
 		}
 	},
 	[46] = {
 		killsRequired = 500,
-		raceName = "Blue Djinns or Marids",
-		level = {1, 9999}, storage = {12501, 1},
-		premium = true,
+		raceName = "Rotten Golem",
 		creatures = {
-			"blue djinn",
-			"marid"
+			"rotten golem",
+			"branchy crawler",
+			"mould phantom"
 		},
 		rewards = {
-			{type = "exp", value = {10000}},
-			{type = "money", value = {5000}},
-			{type = "storage", value = {34129, 1}}
+			{type = "exp", value = {50000000}},
+			{type = "money", value = {2000000}},
+			{type = "storage", value = {BOSS_POINTS, 3}},
 		}
 	},
 	[47] = {
-		killsRequired = 3000,
-		raceName = "Pirates",
-		level = {1, 9999}, storage = {65047, 1},
-		premium = true,
+		killsRequired = 500,
+		raceName = "Library Books",
 		creatures = {
-			"pirate ghost",
-			"pirate marauder",
-			"pirate cutthroad",
-			"pirate buccaneer",
-			"pirate corsair",
-			"pirate skeleton"
+			"energetic book",
+			"icecold book",
+			"squid warden",
+			"animated feather",
+			"cursed book",
+			"rage squid",
+			"burning book",
+			"knowledge elemental",
+			"energuardian of tales"
 		},
 		rewards = {
-			{type = "exp", value = {10000}},
-			{type = "money", value = {5000}},
-			{type = "storage", value = {17523, 1}}
+			{type = "exp", value = {50000000}},
+			{type = "money", value = {2000000}},
+			{type = "storage", value = {BOSS_POINTS, 3}},
 		}
-	},
-	[48] = {
-		killsRequired = 3000,
-		raceName = "Pirates second task",
-		level = {1, 9999}, storage = {REPEATSTORAGE_BASE + 47, 3}, norepeatable = true,
-		premium = true,
-		creatures = {
-			"pirate ghost",
-			"pirate marauder",
-			"pirate cutthroad",
-			"pirate buccaneer",
-			"pirate corsair",
-			"pirate skeleton"
-		},
-		rewards = {
-			{type = "exp", value = {10000}},
-			{type = "money", value = {5000}},
-			{type = "storage", value = {17523, 1}}
-		}
-	},
-	[49] = {
-		killsRequired = 5000,
-		raceName = "Minotaurs",
-		level = {1, 9999}, storage = {12700, 1}, norepeatable = true,
-		premium = false,
-		creatures = {
-			"minotaur",
-			"minotaur mage",
-			"minotaur archer"
-		},
-		rewards = {
-			{type = "storage", value = {17522, 1}}
-		}
-	},
-	[50] = {
-		killsRequired = 4000,
-		raceName = "Necromancers and Priestess",
-		level = {60, 9999}, norepeatable = true,
-		premium = true,
-		creatures = {
-			"necromancer",
-			"priestess"
-		},
-		rewards = {
-			{type = "storage", value = {34133, 1}},
-			{type = "storage", value = {17521, 1}}
-		}
-	},
-	[51] = {
-		killsRequired = 20,
-		raceName = "Mountain Trolls",
-		level = {1, 9999}, storage = {12701, 1}, norepeatable = true,
-		premium = false,
-		creatures = {
-			"mountain trolls"
-		},
-		rewards = {
-			{type = "storage", value = {17524, 1}}
-		}
-	},
-	[52] = {
-		killsRequired = 20,
-		raceName = "Muglex Clan Footman",
-		level = {1, 9999}, storage = {12702, 1}, norepeatable = true,
-		premium = false,
-		creatures = {
-			"muglex clan footman "
-		},
-		rewards = {
-			{type = "storage", value = {17525, 1}}
-		}
-	},
-	[53] = {
-		killsRequired = 20,
-		raceName = "Minotaur Bruisers",
-		level = {1, 9999}, storage = {12703, 1}, norepeatable = true,
-		premium = false,
-		creatures = {
-			"minotaur bruisers"
-		},
-		rewards = {
-			{type = "storage", value = {17526, 1}}
-		}
-	},
+	}
 }
-
-tasksByPlayer = 3
-repeatTimes = 3
 
 function Player.getPawAndFurRank(self)
 	return (self:getStorageValue(POINTSSTORAGE) >= 100
@@ -844,27 +682,8 @@ function Player.getTasks(self)
 	local canmake = {}
 	local able = {}
 	for k, v in pairs(tasks) do
-		if self:getStorageValue(QUESTSTORAGE_BASE + k) < 1 and self:getStorageValue(REPEATSTORAGE_BASE + k) < repeatTimes then
+		if self:getStorageValue(QUESTSTORAGE_BASE + k) < 1 then
 			able[k] = true
-			if self:getLevel() < v.level[1] or self:getLevel() > v.level[2] then
-				able[k] = false
-			end
-			if v.storage and self:getStorageValue(v.storage[1]) < v.storage[2] then
-				able[k] = false
-			end
-
-			if v.rank then
-				if self:getPawAndFurRank() < v.rank then
-					able[k] = false
-				end
-			end
-
-			if v.premium then
-				if not self:isPremium() then
-					able[k] = false
-				end
-			end
-
 			if able[k] then
 				canmake[#canmake + 1] = k
 			end
@@ -898,33 +717,8 @@ function Player.canStartTask(self, name, table)
 	if self:getStorageValue(QUESTSTORAGE_BASE + id) > 0 then
 		return false
 	end
-	if self:getStorageValue(REPEATSTORAGE_BASE +  id) >= repeatTimes or v.norepeatable and self:getStorageValue(REPEATSTORAGE_BASE +  id) > 0 then
-		return false
-	end
-	if v.level and self:getLevel() >= v.level[1] and self:getLevel() <= v.level[2] then
-		if v.premium then
-			if self:isPremium() then
-				if v.rank then
-					if self:getPawAndFurRank() >= v.rank then
-						if v.storage then
-							if self:getStorageValue(v.storage[1]) >= v.storage then
-								return true
-							end
-						else
-							return true
-						end
-					end
-				else
-					return true
-				end
-			else
-				return true
-			end
-		else
-			return true
-		end
-	end
-	return false
+
+	return true
 end
 
 function Player.getStartedTasks(self)

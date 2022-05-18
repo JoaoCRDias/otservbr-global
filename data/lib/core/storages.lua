@@ -1711,7 +1711,7 @@ Storage = {
 		HyenaSign = 52299,
 		Time = 52300
 	},
-	
+
 	GraveDanger = {
 		-- Reserved storage from 52310 - 52339
 		Questline = 52310,
@@ -2408,7 +2408,10 @@ GlobalStorage = {
 	CobraBastionFlask = 65012,
 	Inquisition = 65013,
 	Yasir = 65014,
-	NightmareIsle = 65015
+	NightmareIsle = 65015,
+	CustomTasks = {
+		BossPoints = 65016,
+	}
 }
 
 

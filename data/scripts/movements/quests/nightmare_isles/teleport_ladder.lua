@@ -1,20 +1,20 @@
 local setting = {
-	[64103] = Position(33475, 32641, 10),
-	[64104] = Position(33473, 32647, 9),
-	[64105] = Position(33463, 32585, 8),
-	[64106] = Position(33457, 32580, 8),
-	[64107] = Position(33422, 32582, 8),
-	[64108] = Position(33430, 32600, 10),
-	[64109] = Position(33420, 32604, 10),
-	[64120] = Position(33446, 32616, 11),
-	[64121] = Position(33460, 32632, 10),
-	[64122] = Position(33429, 32626, 10),
-	[64123] = Position(33425, 32633, 8),
-	[64124] = Position(33435, 32631, 8),
-	[64125] = Position(33478, 32621, 10),
-	[64126] = Position(33484, 32629, 8),
-	[64127] = Position(33452, 32617, 11),
-	[64128] = Position(33419, 32589, 10)
+	[64103] = Position(573, 1153, 10),
+	[64104] = Position(571, 1159, 9),
+	[64105] = Position(561, 1098, 8),
+	[64106] = Position(554, 1092, 8),
+	[64107] = Position(520, 1094, 8),
+	[64108] = Position(528, 1112, 10),
+	[64109] = Position(518, 1116, 10),
+	[64120] = Position(544, 1128, 11),
+	[64121] = Position(558, 1144, 10),
+	[64122] = Position(527, 1138, 10),
+	[64123] = Position(526, 1145, 8),
+	[64124] = Position(533, 1143, 8),
+	[64125] = Position(576, 1133, 10),
+	[64126] = Position(583, 1141, 8),
+	[64127] = Position(550, 1129, 11),
+	[64128] = Position(517, 1101, 10)
 }
 
 local teleportLadder = MoveEvent()
@@ -22,14 +22,6 @@ local teleportLadder = MoveEvent()
 function teleportLadder.onStepIn(creature, item, position, fromPosition)
 	local player = creature:getPlayer()
 	if not player then
-		return true
-	end
-
-	if player:getStorageValue(Storage.TheShatteredIsles.AccessToLagunaIsland) ~= 1 and item.uid == 3206 then
-		local accessPosition = Position(32340, 32540, 7)
-		player:teleportTo(accessPosition)
-		position:sendMagicEffect(CONST_ME_TELEPORT)
-		accessPosition:sendMagicEffect(CONST_ME_TELEPORT)
 		return true
 	end
 
