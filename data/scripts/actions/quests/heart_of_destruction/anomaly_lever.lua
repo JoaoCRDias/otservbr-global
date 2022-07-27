@@ -1,117 +1,69 @@
--- FUNCTIONS
-local function doCheckArea()
-	local upConer = {x = 32258, y = 31237, z = 14}       -- upLeftCorner
-	local downConer = {x = 32284, y = 31262, z = 14}     -- downRightCorner
-
-	for i=upConer.x, downConer.x do
-		for j=upConer.y, downConer.y do
-        	for k = upConer.z, downConer.z do
-		        local room = {x=i, y=j, z=k}
-				local tile = Tile(room)
-				if tile then
-					local creatures = tile:getCreatures()
-					if creatures and #creatures > 0 then
-						for _, c in pairs(creatures) do
-							if isPlayer(c) then
-								return true
-							end
-						end
-					end
-				end
-			end
-		end
-	end
-	return false
-end
-
-local function clearArea()
-	local upConer = {x = 32258, y = 31237, z = 14}       -- upLeftCorner
-	local downConer = {x = 32284, y = 31262, z = 14}     -- downRightCorner
-
-	for i=upConer.x, downConer.x do
-		for j=upConer.y, downConer.y do
-        	for k= upConer.z, downConer.z do
-		        local room = {x=i, y=j, z=k}
-				local tile = Tile(room)
-				if tile then
-					local creatures = tile:getCreatures()
-					if creatures and #creatures > 0 then
-						for _, c in pairs(creatures) do
-							if isPlayer(c) then
-								c:teleportTo({x = 32104, y = 31329, z = 12})
-							elseif isMonster(c) then
-								c:remove()
-							end
-						end
-					end
-				end
-			end
-		end
-	end
-end
--- FUNCTIONS END
-
 local heartDestructionAnomaly = Action()
 function heartDestructionAnomaly.onUse(player, item, fromPosition, itemEx, toPosition)
 
 	local config = {
 		playerPositions = {
-			Position(32245, 31245, 14),
-			Position(32245, 31246, 14),
-			Position(32245, 31247, 14),
-			Position(32245, 31248, 14),
-			Position(32245, 31249, 14)
+			Position(170, 846, 8),
+			Position(170, 847, 8),
+			Position(170, 848, 8),
+			Position(170, 849, 8),
+			Position(170, 850, 8)
 		},
-
-		newPos = {x = 32271, y = 31257, z = 14},
+		newPos = {x = 188, y = 851, z = 8},
+		bossRoomCenterPosition = Position(196, 850, 8),
+		rangeX = 11,
+		rangeY = 11,
+		exitPos = Position(170, 852, 8),
+		pushPos = {x = 170, y = 846, z = 8}
 	}
-
-	local pushPos = {x = 32245, y = 31245, z = 14}
 
 	if item.actionid == 14325 then
 		if item.itemid == 8911 then
-			if player:getPosition().x == pushPos.x and player:getPosition().y == pushPos.y and player:getPosition().z == pushPos.z then
+			if player:getPosition().x == config.pushPos.x and player:getPosition().y == config.pushPos.y and player:getPosition().z == config.pushPos.z then
 
-				local storePlayers, playerTile = {}
+				local storePlayers = {}
+				local playerTile = {}
 				for i = 1, #config.playerPositions do
 					playerTile = Tile(config.playerPositions[i]):getTopCreature()
 					if isPlayer(playerTile) then
-						storePlayers[#storePlayers + 1] = playerTile
+						if playerTile:getStorageValue(Storage.Quest.HeartOfDestruction.AnomalyTimer) > os.time() then
+							player:getPosition():sendMagicEffect(CONST_ME_POFF)
+							player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You or a member in your team have to wait 20 hours to face this boss again!")
+							return true
+						end
+						table.insert(storePlayers, playerTile)
 					end
 				end
 
-				if doCheckArea() == false then
-					clearArea()
+				if CheckBossRoom(config.bossRoomCenterPosition, config.rangeX, config.rangeY) == false then
+					ClearMonstersInBossRoom(config.bossRoomCenterPosition, config.rangeX, config.rangeY)
 
-					local players
 
+					local playersUidTable = {}
 					for i = 1, #storePlayers do
-						players = storePlayers[i]
+						local player = storePlayers[i]
 						config.playerPositions[i]:sendMagicEffect(CONST_ME_POFF)
-						players:teleportTo(config.newPos)
-						players:setStorageValue(14321, os.time() + 20*60*60)
+						table.insert(playersUidTable, player.uid)
+						player:teleportTo(config.newPos)
+						player:setStorageValue(Storage.Quest.HeartOfDestruction.AnomalyTimer, os.time() + 20*60*60)
 					end
 					Position(config.newPos):sendMagicEffect(11)
 
-					areaAnomaly1 = addEvent(clearArea, 15 * 60000)
+					addEvent(ClearPlayersInBossRoom, 15 * 60000, playersUidTable, config.bossRoomCenterPosition, config.rangeX, config.rangeY, config.exitPos)
 
-					Game.setStorageValue(14322, 0) -- Anomaly Stages
+					Game.createMonster("Spark of Destruction", {x = 199, y = 846, z = 8}, false, true)
+					Game.createMonster("Spark of Destruction", {x = 191, y = 846, z = 8}, false, true)
+					Game.createMonster("Spark of Destruction", {x = 201, y = 854, z = 8}, false, true)
+					Game.createMonster("Spark of Destruction", {x = 193, y = 856, z = 8}, false, true)
+					Game.createMonster("Anomaly", {x = 197, y = 850, z = 8}, false, true)
 
-					Game.createMonster("Spark of Destruction", {x = 32267, y = 31253, z = 14}, false, true)
-					Game.createMonster("Spark of Destruction", {x = 32274, y = 31255, z = 14}, false, true)
-					Game.createMonster("Spark of Destruction", {x = 32274, y = 31249, z = 14}, false, true)
-					Game.createMonster("Spark of Destruction", {x = 32267, y = 31249, z = 14}, false, true)
-					Game.createMonster("Anomaly", {x = 32271, y = 31249, z = 14}, false, true)
+					AnomalyStage = 0
 
-					local vortex = Tile({x = 32261, y = 31250, z = 14}):getItemById(23482)
-					if vortex then
-						vortex:transform(23483)
-						vortex:setActionId(14324)
-					end
 				else
 					player:sendTextMessage(19, "Someone is in the area.")
 				end
 			else
+				player:sendCancelMessage("You need to stay in front of lever")
 				return true
 			end
 		end

@@ -1,9 +1,9 @@
 local config = {
     monsterName = 'Mawhawk',
-    bossPosition = Position(33703, 32461, 7),
-    centerPosition = Position(33703, 32461, 7),
+    bossPosition = Position(1100, 1279, 7),
+    centerPosition = Position(1075, 1279, 7),
     rangeX = 50,
-    rangeY = 50
+    rangeY = 20
 }
 
 local function checkBoss(centerPosition, rangeX, rangeY, bossName)
@@ -30,5 +30,5 @@ function mawhawk.onThink(interval, lastExecution)
     return true
 end
 
-mawhawk:interval(14399999)
+mawhawk:interval(14400000)
 mawhawk:register()

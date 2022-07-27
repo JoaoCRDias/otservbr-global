@@ -20,7 +20,7 @@ monster.events = {
 monster.health = 15200
 monster.maxHealth = 15200
 monster.race = "blood"
-monster.corpse = 0
+monster.corpse = 1
 monster.speed = 250
 
 monster.faction = FACTION_LIONUSURPERS

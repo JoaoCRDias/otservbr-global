@@ -1,72 +1,75 @@
 local config = {
-	centerRoom = Position(32799, 32832, 14),
-	bossPosition = Position(32799, 32827, 14),
-	newPosition = Position(32800, 32831, 14)
+	leverAid = 14871,
+	bossName = "Lloyd",
+	bossPosition = Position(162, 652, 8),
+	storageTimer = Storage.ForgottenKnowledge.LloydTimer,
+	playerPositions = {
+		Position(129, 652, 8),
+		Position(129, 653, 8),
+		Position(129, 654, 8),
+		Position(129, 655, 8),
+		Position(129, 656, 8)
+	},
+	newPos = Position(163, 658, 8),
+	bossRoomCenterPosition = Position(162, 648, 8),
+	rangeX = 15,
+	rangeY = 15,
+	exitPos = Position(129, 658, 8),
+	pushPos = Position(129, 652, 8)
 }
 
-local monsters = {
-	{cosmic = 'cosmic energy prism a', pos = Position(32801, 32827, 14)},
-	{cosmic = 'cosmic energy prism b', pos = Position(32798, 32827, 14)},
-	{cosmic = 'cosmic energy prism c', pos = Position(32803, 32826, 14)},
-	{cosmic = 'cosmic energy prism d', pos = Position(32796, 32826, 14)}
-}
+local alptramunLever = Action()
+function alptramunLever.onUse(player, item, fromPosition, itemEx, toPosition)
+	if item.actionid == config.leverAid then
+		if item.itemid == 8911 then
+			if player:getPosition().x == config.pushPos.x and player:getPosition().y == config.pushPos.y and player:getPosition().z == config.pushPos.z then
 
-local function clearForgottenLloyd()
-	local spectators = Game.getSpectators(config.centerRoom, false, false, 15, 15, 15, 15)
-	for i = 1, #spectators do
-		local spectator = spectators[i]
-		if spectator:isPlayer() then
-			spectator:teleportTo(Position(32815, 32873, 13))
-			spectator:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-			spectator:say('Time out! You were teleported out by strange forces.', TALKTYPE_MONSTER_SAY)
-		elseif spectator:isMonster() then
-			spectator:remove()
-		end
-	end
-end
+				local storePlayers = {}
+				local playerTile = {}
+				for i = 1, #config.playerPositions do
+					playerTile = Tile(config.playerPositions[i]):getTopCreature()
+					if isPlayer(playerTile) then
+						if playerTile:getStorageValue(config.storageTimer) > os.time() then
+							player:getPosition():sendMagicEffect(CONST_ME_POFF)
+							player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You or a member in your team have to wait 20 hours to face this boss again!")
+							return true
+						end
+						table.insert(storePlayers, playerTile)
+					end
+				end
 
-local forgottenKnowledgeLever = Action()
-function forgottenKnowledgeLever.onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if item.itemid == 8911 then
-		if player:getPosition() ~= Position(32759, 32868, 14) then
-			item:transform(8912)
-			return true
-		end
-	end
-	if item.itemid == 8911 then
-		local specs, spec = Game.getSpectators(config.centerRoom, false, false, 15, 15, 15, 15)
-		for i = 1, #specs do
-			spec = specs[i]
-			if spec:isPlayer() then
-				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Someone is fighting with Lloyd.")
+				if CheckBossRoom(config.bossRoomCenterPosition, config.rangeX, config.rangeY) == false then
+					ClearMonstersInBossRoom(config.bossRoomCenterPosition, config.rangeX, config.rangeY)
+
+
+					local playersUidTable = {}
+					for i = 1, #storePlayers do
+						local player = storePlayers[i]
+						config.playerPositions[i]:sendMagicEffect(CONST_ME_POFF)
+						table.insert(playersUidTable, player.uid)
+						player:teleportTo(config.newPos)
+						player:setStorageValue(config.storageTimer, os.time() + 20*60*60)
+					end
+					Position(config.newPos):sendMagicEffect(11)
+
+					addEvent(ClearPlayersInBossRoom, 15 * 60000, playersUidTable, config.bossRoomCenterPosition, config.rangeX, config.rangeY, config.exitPos)
+
+					Game.createMonster(config.bossName, config.bossPosition, false, true)
+
+					AnomalyStage = 0
+
+				else
+					player:sendTextMessage(19, "Someone is in the area.")
+				end
+			else
+				player:sendCancelMessage("You need to stay in front of lever")
 				return true
 			end
 		end
-		for n = 1, #monsters do
-			Game.createMonster(monsters[n].cosmic, monsters[n].pos, true, true)
-		end
-		Game.createMonster("lloyd", config.bossPosition, true, true)
-		for y = 32868, 32872 do
-			local playerTile = Tile(Position(32759, y, 14)):getTopCreature()
-			if playerTile and playerTile:isPlayer() then
-				if playerTile:getStorageValue(Storage.ForgottenKnowledge.LloydTimer) < os.time() then
-					playerTile:getPosition():sendMagicEffect(CONST_ME_POFF)
-					playerTile:teleportTo(config.newPosition)
-					playerTile:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-					playerTile:setStorageValue(Storage.ForgottenKnowledge.LloydTimer, os.time() + 20 * 3600)
-				else
-					player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You need to wait a while, recently someone challenge Lloyd.")
-					return true
-				end
-			end
-		end
-		addEvent(clearForgottenLloyd, 30 * 60 * 1000)
-		item:transform(8912)
-	elseif item.itemid == 8912 then
-		item:transform(8911)
+		item:transform(item.itemid == 8911 and 8912 or 8911)
 	end
 	return true
 end
 
-forgottenKnowledgeLever:aid(24881)
-forgottenKnowledgeLever:register()
+alptramunLever:aid(config.leverAid)
+alptramunLever:register()

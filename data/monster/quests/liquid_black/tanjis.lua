@@ -32,6 +32,10 @@ monster.strategiesTarget = {
 	random = 10,
 }
 
+monster.events = {
+	"DeeplingBossesDeath"
+}
+
 monster.flags = {
 	summonable = false,
 	attackable = true,

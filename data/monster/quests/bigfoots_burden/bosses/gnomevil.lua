@@ -76,6 +76,10 @@ monster.loot = {
 	{id = 16155, chance = 3710}
 }
 
+monster.events = {
+	"Wz123BossDeath"
+}
+
 monster.attacks = {
 	{name ="melee", interval = 1300, chance = 100, skill = 80, attack = 140},
 	{name ="speed", interval = 2000, chance = 20, speedChange = -400, range = 7, shootEffect = CONST_ANI_WHIRLWINDAXE, target = false, duration = 2500},

@@ -52,10 +52,6 @@ monster.flags = {
 	canWalkOnPoison = false
 }
 
-monster.events = {
-	"HealthForgotten"
-}
-
 monster.light = {
 	level = 0,
 	color = 0
@@ -65,6 +61,13 @@ monster.voices = {
 	interval = 5000,
 	chance = 10,
 	{text = "May the embrace of darkness kill you!", yell = false}
+}
+
+monster.summon = {
+	maxSummons = 2,
+	summons = {
+		{name = "shadow fiend", chance = 10, interval = 2000, count = 2}
+	}
 }
 
 monster.loot = {
@@ -109,7 +112,6 @@ monster.attacks = {
 	{name ="melee", interval = 2000, chance = 100, minDamage = -800, maxDamage = -1300},
 	{name ="combat", interval = 6000, chance = 13, type = COMBAT_DEATHDAMAGE, minDamage = -1200, maxDamage = -1500, length = 8, spread = 3, effect = CONST_ME_MORTAREA, target = false},
 	{name ="combat", interval = 2000, chance = 13, type = COMBAT_DEATHDAMAGE, minDamage = -400, maxDamage = -600, radius = 4, shootEffect = CONST_ANI_DEATH, effect = CONST_ME_SMALLCLOUDS, target = true},
-	{name ="tenebris summon", interval = 2000, chance = 14, target = false},
 	{name ="tenebris ultimate", interval = 15000, chance = 30, target = false}
 }
 

@@ -1,122 +1,73 @@
--- FUNCTIONS
-local function doCheckArea()
-	local upConer = {x = 32197, y = 31236, z = 14}       -- upLeftCorner
-	local downConer = {x = 32220, y = 31260, z = 14}     -- downRightCorner
-
-	for i=upConer.x, downConer.x do
-		for j=upConer.y, downConer.y do
-        	for k = upConer.z, downConer.z do
-		        local room = {x=i, y=j, z=k}
-				local tile = Tile(room)
-				if tile then
-					local creatures = tile:getCreatures()
-					if creatures and #creatures > 0 then
-						for _, c in pairs(creatures) do
-							if isPlayer(c) then
-								return true
-							end
-						end
-					end
-				end
-			end
-		end
-	end
-	return false
-end
-
-local function clearArea()
-	local upConer = {x = 32197, y = 31236, z = 14}       -- upLeftCorner
-	local downConer = {x = 32220, y = 31260, z = 14}     -- downRightCorner
-
-	for i=upConer.x, downConer.x do
-		for j=upConer.y, downConer.y do
-        	for k= upConer.z, downConer.z do
-		        local room = {x=i, y=j, z=k}
-				local tile = Tile(room)
-				if tile then
-					local creatures = tile:getCreatures()
-					if creatures and #creatures > 0 then
-						for _, c in pairs(creatures) do
-							if isPlayer(c) then
-								c:teleportTo({x = 32230, y = 31358, z = 11})
-							elseif isMonster(c) then
-								c:remove()
-							end
-						end
-					end
-				end
-			end
-		end
-	end
-	stopEvent(areaQuake1)
-end
--- FUNCTIONS END
-
 local heartDestructionQuake = Action()
 function heartDestructionQuake.onUse(player, item, fromPosition, itemEx, toPosition)
 
 	local config = {
 		playerPositions = {
-			Position(32182, 31244, 14),
-			Position(32182, 31245, 14),
-			Position(32182, 31246, 14),
-			Position(32182, 31247, 14),
-			Position(32182, 31248, 14)
+			Position(175, 880, 8),
+			Position(175, 881, 8),
+			Position(175, 882, 8),
+			Position(175, 883, 8),
+			Position(175, 884, 8)
 		},
-
-		newPos = {x = 32208, y = 31256, z = 14},
+		newPos = {x = 194, y = 884, z = 8},
+		bossRoomCenterPosition = Position(202, 883, 8),
+		rangeX = 11,
+		rangeY = 11,
+		exitPos = Position(175, 886, 8),
+		pushPos = {x = 175, y = 880, z = 8}
 	}
-
-	local pushPos = {x = 32182, y = 31244, z = 14}
 
 	if item.actionid == 14329 then
 		if item.itemid == 8911 then
-			if player:getPosition().x == pushPos.x and player:getPosition().y == pushPos.y and player:getPosition().z == pushPos.z then
+			if player:getPosition().x == config.pushPos.x and player:getPosition().y == config.pushPos.y and player:getPosition().z == config.pushPos.z then
 
-				local storePlayers, playerTile = {}
+				local storePlayers = {}
+				local playerTile = {}
 				for i = 1, #config.playerPositions do
 					playerTile = Tile(config.playerPositions[i]):getTopCreature()
 					if isPlayer(playerTile) then
-						storePlayers[#storePlayers + 1] = playerTile
+						if playerTile:getStorageValue(Storage.Quest.HeartOfDestruction.QuakeTimer) > os.time() then
+							player:getPosition():sendMagicEffect(CONST_ME_POFF)
+							player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You or a member in your team have to wait 20 hours to face this boss again!")
+							return true
+						end
+						table.insert(storePlayers, playerTile)
 					end
 				end
 
-				if doCheckArea() == false then
-					clearArea()
+				if CheckBossRoom(config.bossRoomCenterPosition, config.rangeX, config.rangeY) == false then
+					ClearMonstersInBossRoom(config.bossRoomCenterPosition, config.rangeX, config.rangeY)
 
-					local players
 
+					local playersUidTable = {}
 					for i = 1, #storePlayers do
-						players = storePlayers[i]
+						local player = storePlayers[i]
 						config.playerPositions[i]:sendMagicEffect(CONST_ME_POFF)
-						players:teleportTo(config.newPos)
-						players:setStorageValue(14325, os.time() + 20*60*60)
+						table.insert(playersUidTable, player.uid)
+						player:teleportTo(config.newPos)
+						player:setStorageValue(Storage.Quest.HeartOfDestruction.QuakeTimer, os.time() + 20*60*60)
 					end
 					Position(config.newPos):sendMagicEffect(11)
 
-					areaQuake1 = addEvent(clearArea, 15 * 60000)
+					addEvent(ClearPlayersInBossRoom, 15 * 60000, playersUidTable, config.bossRoomCenterPosition, config.rangeX, config.rangeY, config.exitPos)
 
-					Game.createMonster("Spark of Destruction", {x = 32203, y = 31246, z = 14}, false, true)
-					Game.createMonster("Spark of Destruction", {x = 32205, y = 31251, z = 14}, false, true)
-					Game.createMonster("Spark of Destruction", {x = 32210, y = 31251, z = 14}, false, true)
-					Game.createMonster("Spark of Destruction", {x = 32212, y = 31246, z = 14}, false, true)
-					Game.createMonster("Foreshock", {x = 32208, y = 31248, z = 14}, false, true)
+					Game.createMonster("Spark of Destruction", {x = 199, y = 880, z = 8}, false, true)
+					Game.createMonster("Spark of Destruction", {x = 199, y = 887, z = 8}, false, true)
+					Game.createMonster("Spark of Destruction", {x = 206, y = 881, z = 8}, false, true)
+					Game.createMonster("Spark of Destruction", {x = 206, y = 886, z = 8}, false, true)
+					Game.createMonster("Foreshock", {x = 202, y = 883, z = 8}, false, true)
 
-					foreshockHealth = 105000
-					aftershockHealth = 105000
-					realityQuakeStage = 0
-					foreshockStage = 0
-					aftershockStage = 0
+					AftershockHealth = 105000
+					ForeshockHealth = 105000
+					RealityQuakeStage = 0
+					ForeshockStage = 0
+					ShockStage = 0
 
-					local vortex = Tile({x = 32199, y = 31248, z = 14}):getItemById(23482)
-					if vortex then
-						vortex:transform(23483)
-						vortex:setActionId(14345)
-					end
 				else
 					player:sendTextMessage(19, "Someone is in the area.")
 				end
 			else
+				player:sendCancelMessage("You need to stay in front of lever")
 				return true
 			end
 		end

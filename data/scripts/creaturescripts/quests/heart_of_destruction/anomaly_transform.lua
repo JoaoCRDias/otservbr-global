@@ -5,38 +5,38 @@ function anomalyTransform.onThink(creature)
 	end
 
 	local hp = (creature:getHealth() / creature:getMaxHealth()) * 100
-	if hp <= 75 and Game.getStorageValue(14322) == 0 then
+	if hp <= 75 and AnomalyStage == 0 then
 		creature:remove()
-		Game.createMonster("spark of destruction", {x = 32267, y = 31253, z = 14}, false, true)
-		Game.createMonster("spark of destruction", {x = 32274, y = 31255, z = 14}, false, true)
-		Game.createMonster("spark of destruction", {x = 32274, y = 31249, z = 14}, false, true)
-		Game.createMonster("spark of destruction", {x = 32267, y = 31249, z = 14}, false, true)
-		Game.createMonster("charged anomaly", {x = 32271, y = 31249, z = 14}, false, true)
-		Game.setStorageValue(14322, 1)
-	elseif hp <= 50 and Game.getStorageValue(14322) == 1 then
+		Game.createMonster("spark of destruction", {x = 199, y = 846, z = 8}, false, true)
+		Game.createMonster("spark of destruction", {x = 191, y = 846, z = 8}, false, true)
+		Game.createMonster("spark of destruction", {x = 201, y = 854, z = 8}, false, true)
+		Game.createMonster("spark of destruction", {x = 193, y = 856, z = 8}, false, true)
+		Game.createMonster("charged anomaly", {x = 197, y = 850, z = 8}, false, true)
+		AnomalyStage = 1
+	elseif hp <= 50 and AnomalyStage == 1 then
 		creature:remove()
-		Game.createMonster("spark of destruction", {x = 32267, y = 31253, z = 14}, false, true)
-		Game.createMonster("spark of destruction", {x = 32274, y = 31255, z = 14}, false, true)
-		Game.createMonster("spark of destruction", {x = 32274, y = 31249, z = 14}, false, true)
-		Game.createMonster("spark of destruction", {x = 32267, y = 31249, z = 14}, false, true)
-		Game.createMonster("charged anomaly", {x = 32271, y = 31249, z = 14}, false, true)
-		Game.setStorageValue(14322, 2)
-	elseif hp <= 25 and Game.getStorageValue(14322) == 2 then
+		Game.createMonster("spark of destruction", {x = 199, y = 846, z = 8}, false, true)
+		Game.createMonster("spark of destruction", {x = 191, y = 846, z = 8}, false, true)
+		Game.createMonster("spark of destruction", {x = 201, y = 854, z = 8}, false, true)
+		Game.createMonster("spark of destruction", {x = 193, y = 856, z = 8}, false, true)
+		Game.createMonster("charged anomaly", {x = 197, y = 850, z = 8}, false, true)
+		AnomalyStage = 2
+	elseif hp <= 25 and AnomalyStage == 2 then
 		creature:remove()
-		Game.createMonster("spark of destruction", {x = 32267, y = 31253, z = 14}, false, true)
-		Game.createMonster("spark of destruction", {x = 32274, y = 31255, z = 14}, false, true)
-		Game.createMonster("spark of destruction", {x = 32274, y = 31249, z = 14}, false, true)
-		Game.createMonster("spark of destruction", {x = 32267, y = 31249, z = 14}, false, true)
-		Game.createMonster("charged anomaly", {x = 32271, y = 31249, z = 14}, false, true)
-		Game.setStorageValue(14322, 3)
-	elseif hp <= 5 and Game.getStorageValue(14322) == 3 then
+		Game.createMonster("spark of destruction", {x = 199, y = 846, z = 8}, false, true)
+		Game.createMonster("spark of destruction", {x = 191, y = 846, z = 8}, false, true)
+		Game.createMonster("spark of destruction", {x = 201, y = 854, z = 8}, false, true)
+		Game.createMonster("spark of destruction", {x = 193, y = 856, z = 8}, false, true)
+		Game.createMonster("charged anomaly", {x = 197, y = 850, z = 8}, false, true)
+		AnomalyStage = 3
+	elseif hp <= 5 and AnomalyStage == 3 then
 		creature:remove()
-		Game.createMonster("spark of destruction", {x = 32267, y = 31253, z = 14}, false, true)
-		Game.createMonster("spark of destruction", {x = 32274, y = 31255, z = 14}, false, true)
-		Game.createMonster("spark of destruction", {x = 32274, y = 31249, z = 14}, false, true)
-		Game.createMonster("spark of destruction", {x = 32267, y = 31249, z = 14}, false, true)
-		Game.createMonster("charged anomaly", {x = 32271, y = 31249, z = 14}, false, true)
-		Game.setStorageValue(14322, 4)
+		Game.createMonster("spark of destruction", {x = 199, y = 846, z = 8}, false, true)
+		Game.createMonster("spark of destruction", {x = 191, y = 846, z = 8}, false, true)
+		Game.createMonster("spark of destruction", {x = 201, y = 854, z = 8}, false, true)
+		Game.createMonster("spark of destruction", {x = 193, y = 856, z = 8}, false, true)
+		Game.createMonster("charged anomaly", {x = 197, y = 850, z = 8}, false, true)
+		AnomalyStage = 4
 	end
 	return true
 end

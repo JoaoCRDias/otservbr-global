@@ -16,7 +16,7 @@ monster.outfit = {
 monster.health = 12000
 monster.maxHealth = 12000
 monster.race = "venom"
-monster.corpse = 0
+monster.corpse = 1
 monster.speed = 300
 monster.manaCost = 0
 
@@ -75,7 +75,7 @@ monster.attacks = {
 	{name ="combat", interval = 2000, chance = 25, type = COMBAT_PHYSICALDAMAGE, minDamage = -450, maxDamage = -900, radius = 8, effect = CONST_ME_BLOCKHIT, target = false},
 	{name ="combat", interval = 2000, chance = 25, type = COMBAT_PHYSICALDAMAGE, minDamage = -600, maxDamage = -1000, length = 8, spread = 3, effect = CONST_ME_BLOCKHIT, target = false},
 	{name ="anomaly break", interval = 2000, chance = 40, target = false},
-	{name ="outburst explode", interval = 10000, chance = 100, minDamage = -1500, maxDamage = -2000, target = false}
+	{name ="outburst explode", interval = 10000, chance = 100, minDamage = -1500, maxDamage = -4000, target = false}
 }
 
 monster.defenses = {

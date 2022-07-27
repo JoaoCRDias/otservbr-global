@@ -51,11 +51,7 @@ function onTargetTile(creature, pos)
 				local max = 2500
 				local player = Player(creatureTable[r])
 
-				if isPlayer(creatureTable[r]) == true and table.contains(vocation, player:getVocation():getBaseId()) then
-					doTargetCombatHealth(creature, creatureTable[r], COMBAT_DEATHDAMAGE, -min, -max, CONST_ME_NONE)
-				elseif isMonster(creatureTable[r]) == true then
-					doTargetCombatHealth(creature, creatureTable[r], COMBAT_DEATHDAMAGE, -min, -max, CONST_ME_NONE)
-				end
+				doTargetCombatHealth(creature, creatureTable[r], COMBAT_DEATHDAMAGE, -min, -max, CONST_ME_NONE)
 			end
 		end
 	end
@@ -74,19 +70,18 @@ local function delayedCastSpell(cid, var)
 		creature:setMoveLocked(false)
 		return combat:execute(creature, positionToVariant(creature:getPosition()))
 	end
-	return
 end
 
 local spell = Spell("instant")
 
 function spell.onCastSpell(creature, var)
-	local specs, spec = Game.getSpectators(Position(32912, 31599, 14), false, false, 12, 12, 12, 12)
+	local specs, spec = Game.getSpectators(Position(41, 613, 8), false, false, 12, 12, 12, 12)
 	for i = 1, #specs do
 		spec = specs[i]
 		if spec:isPlayer() then
-			spec:teleportTo(Position(32912, 31599, 14))
+			spec:teleportTo(Position(41, 614, 8))
 		elseif spec:getName():lower() == 'lady tenebris' then
-			spec:teleportTo(Position(32912, 31599, 14))
+			spec:teleportTo(Position(41, 613, 8))
 			spec:setMoveLocked(true)
 		end
 	end

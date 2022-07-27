@@ -35,7 +35,7 @@ end
 -- Call the dump function and print it to console
 function pdump(input)
 	local dump_str = dump(input)
-	Spdlog.debug(dump_str)
+	print(dump_str)
 	return dump_str
 end
 

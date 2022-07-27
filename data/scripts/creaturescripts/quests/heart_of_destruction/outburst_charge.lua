@@ -5,46 +5,46 @@ function outburstCharge.onThink(creature)
 	end
 
 	local hp = (creature:getHealth() / creature:getMaxHealth()) * 100
-	if hp <= 80 and outburstStage == 0 then
-		outburstHealth = creature:getHealth()
+	if hp <= 80 and OutburstStage == 0 then
+		OutburstHealth = creature:getHealth()
 		creature:remove()
-		Game.createMonster("spark of destruction", {x = 32229, y = 31282, z = 14}, false, true)
-		Game.createMonster("spark of destruction", {x = 32230, y = 31287, z = 14}, false, true)
-		Game.createMonster("spark of destruction", {x = 32237, y = 31287, z = 14}, false, true)
-		Game.createMonster("spark of destruction", {x = 32238, y = 31282, z = 14}, false, true)
-		Game.createMonster("charging outburst", {x = 32234, y = 31284, z = 14}, false, true)
-		outburstStage = 1
-		chargingOutKilled = false
-	elseif hp <= 60 and outburstStage == 1 then
-		outburstHealth = creature:getHealth()
+		Game.createMonster("spark of destruction", {x = 132, y = 867, z = 8}, false, true)
+		Game.createMonster("spark of destruction", {x = 140, y = 867, z = 8}, false, true)
+		Game.createMonster("spark of destruction", {x = 140, y = 874, z = 8}, false, true)
+		Game.createMonster("spark of destruction", {x = 131, y = 874, z = 8}, false, true)
+		Game.createMonster("charging outburst", {x = 135, y = 870, z = 8}, false, true)
+		OutburstStage = 1
+		ChargingOutKilled = false
+	elseif hp <= 60 and OutburstStage == 1 then
+		OutburstHealth = creature:getHealth()
 		creature:remove()
-		Game.createMonster("spark of destruction", {x = 32229, y = 31282, z = 14}, false, true)
-		Game.createMonster("spark of destruction", {x = 32230, y = 31287, z = 14}, false, true)
-		Game.createMonster("spark of destruction", {x = 32237, y = 31287, z = 14}, false, true)
-		Game.createMonster("spark of destruction", {x = 32238, y = 31282, z = 14}, false, true)
-		Game.createMonster("charging outburst", {x = 32234, y = 31284, z = 14}, false, true)
-		outburstStage = 2
-		chargingOutKilled = false
-	elseif hp <= 40 and outburstStage == 2 then
-		outburstHealth = creature:getHealth()
+		Game.createMonster("spark of destruction", {x = 132, y = 867, z = 8}, false, true)
+		Game.createMonster("spark of destruction", {x = 140, y = 867, z = 8}, false, true)
+		Game.createMonster("spark of destruction", {x = 140, y = 874, z = 8}, false, true)
+		Game.createMonster("spark of destruction", {x = 131, y = 874, z = 8}, false, true)
+		Game.createMonster("charging outburst", {x = 135, y = 870, z = 8}, false, true)
+		OutburstStage = 2
+		ChargingOutKilled = false
+	elseif hp <= 40 and OutburstStage == 2 then
+		OutburstHealth = creature:getHealth()
 		creature:remove()
-		Game.createMonster("spark of destruction", {x = 32229, y = 31282, z = 14}, false, true)
-		Game.createMonster("spark of destruction", {x = 32230, y = 31287, z = 14}, false, true)
-		Game.createMonster("spark of destruction", {x = 32237, y = 31287, z = 14}, false, true)
-		Game.createMonster("spark of destruction", {x = 32238, y = 31282, z = 14}, false, true)
-		Game.createMonster("charging outburst", {x = 32234, y = 31284, z = 14}, false, true)
-		outburstStage = 3
-		chargingOutKilled = false
-	elseif hp <= 20 and outburstStage == 3 then
-		outburstHealth = creature:getHealth()
+		Game.createMonster("spark of destruction", {x = 132, y = 867, z = 8}, false, true)
+		Game.createMonster("spark of destruction", {x = 140, y = 867, z = 8}, false, true)
+		Game.createMonster("spark of destruction", {x = 140, y = 874, z = 8}, false, true)
+		Game.createMonster("spark of destruction", {x = 131, y = 874, z = 8}, false, true)
+		Game.createMonster("charging outburst", {x = 135, y = 870, z = 8}, false, true)
+		OutburstStage = 3
+		ChargingOutKilled = false
+	elseif hp <= 20 and OutburstStage == 3 then
+		OutburstHealth = creature:getHealth()
 		creature:remove()
-		Game.createMonster("spark of destruction", {x = 32229, y = 31282, z = 14}, false, true)
-		Game.createMonster("spark of destruction", {x = 32230, y = 31287, z = 14}, false, true)
-		Game.createMonster("spark of destruction", {x = 32237, y = 31287, z = 14}, false, true)
-		Game.createMonster("spark of destruction", {x = 32238, y = 31282, z = 14}, false, true)
-		Game.createMonster("charging outburst", {x = 32234, y = 31284, z = 14}, false, true)
-		outburstStage = 4
-		chargingOutKilled = false
+		Game.createMonster("spark of destruction", {x = 132, y = 867, z = 8}, false, true)
+		Game.createMonster("spark of destruction", {x = 140, y = 867, z = 8}, false, true)
+		Game.createMonster("spark of destruction", {x = 140, y = 874, z = 8}, false, true)
+		Game.createMonster("spark of destruction", {x = 131, y = 874, z = 8}, false, true)
+		Game.createMonster("charging outburst", {x = 135, y = 870, z = 8}, false, true)
+		OutburstStage = 4
+		ChargingOutKilled = false
 	end
 	return true
 end

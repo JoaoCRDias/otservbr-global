@@ -2228,7 +2228,14 @@ Storage = {
 		Krailos = {},
 		RiftWarriorOutfits = {},
 		-- update 10.94
-		HeartOfDestruction = {},
+		HeartOfDestruction = {
+			QuakeTimer = 32600,
+			RuptureTimer = 32601,
+			OutburstTimer = 32602,
+			EradicatorTimer = 32603,
+			AnomalyTimer = 32604,
+			WDTimer = 32605,
+		},
 		-- update 11.02
 		FestiveOutfits = {},
 		FirstDragon = {},
@@ -2248,7 +2255,12 @@ Storage = {
 		-- update 12.00
 		DreamWarriorOutfits = {},
 		TheDreamCourts = {
-			AndrewDoor = 14900
+			AlptramunTimer = 14900,
+			MalofurTimer = 14901,
+			MaxxeniusTimer = 14902,
+			PlaguerootTimer = 14903,
+			IzcandarTimer = 14904,
+			NightmareBeastTimer = 14905,
 		},
 		-- update 12.02
 		TibiaAnniversary = {},
@@ -2256,7 +2268,14 @@ Storage = {
 		-- update 12.15.8659
 		GoldenOutfits = {},
 		-- update 12.20
-		GraveDanger = {},
+		GraveDanger = {
+			AzaramTimer = 14910,
+			KruleTimer = 14911,
+			VlakorthTimer = 14912,
+			BaelocTimer = 14913,
+			OsamTimer = 14914,
+			ZelosTimer = 14915,
+		},
 		HandOfTheInquisitionOutfits = {},
 		-- Kilmaresh = {}, done earlier in the file
 		-- update 12.30

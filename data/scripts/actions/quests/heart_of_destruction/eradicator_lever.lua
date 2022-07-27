@@ -1,120 +1,71 @@
--- FUNCTIONS
-local function doCheckArea()
-	local upConer = {x = 32297, y = 31272, z = 14}       -- upLeftCorner
-	local downConer = {x = 32321, y = 31296, z = 14}     -- downRightCorner
-
-	for i=upConer.x, downConer.x do
-		for j=upConer.y, downConer.y do
-        	for k = upConer.z, downConer.z do
-		        local room = {x=i, y=j, z=k}
-				local tile = Tile(room)
-				if tile then
-					local creatures = tile:getCreatures()
-					if creatures and #creatures > 0 then
-						for _, c in pairs(creatures) do
-							if isPlayer(c) then
-								return true
-							end
-						end
-					end
-				end
-			end
-		end
-	end
-	return false
-end
-
-local function clearArea()
-	local upConer = {x = 32297, y = 31272, z = 14}       -- upLeftCorner
-	local downConer = {x = 32321, y = 31296, z = 14}     -- downRightCorner
-
-	for i=upConer.x, downConer.x do
-		for j=upConer.y, downConer.y do
-        	for k= upConer.z, downConer.z do
-		        local room = {x=i, y=j, z=k}
-				local tile = Tile(room)
-				if tile then
-					local creatures = tile:getCreatures()
-					if creatures and #creatures > 0 then
-						for _, c in pairs(creatures) do
-							if isPlayer(c) then
-								c:teleportTo({x = 32218, y = 31375, z = 11})
-							elseif isMonster(c) then
-								c:remove()
-							end
-						end
-					end
-				end
-			end
-		end
-	end
-	stopEvent(areaEradicator1)
-	stopEvent(areaEradicator2)
-end
--- FUNCTIONS END
-
 local heartDestructionEradicator = Action()
 function heartDestructionEradicator.onUse(player, item, fromPosition, itemEx, toPosition)
 
 	local config = {
 		playerPositions = {
-			Position(32334, 31284, 14),
-			Position(32334, 31285, 14),
-			Position(32334, 31286, 14),
-			Position(32334, 31287, 14),
-			Position(32334, 31288, 14)
+			Position(135, 907, 8),
+			Position(135, 908, 8),
+			Position(135, 909, 8),
+			Position(135, 910, 8),
+			Position(135, 911, 8)
 		},
-
-		newPos = {x = 32309, y = 31290, z = 14},
+		newPos = {x = 117, y = 907, z = 8},
+		bossRoomCenterPosition = Position(110, 906, 8),
+		rangeX = 11,
+		rangeY = 11,
+		exitPos = Position(135, 913, 8),
+		pushPos = {x = 135, y = 907, z = 8}
 	}
-
-	local pushPos = {x = 32334, y = 31284, z = 14}
 
 	if item.actionid == 14330 then
 		if item.itemid == 8911 then
-			if player:getPosition().x == pushPos.x and player:getPosition().y == pushPos.y and player:getPosition().z == pushPos.z then
+			if player:getPosition().x == config.pushPos.x and player:getPosition().y == config.pushPos.y and player:getPosition().z == config.pushPos.z then
 
-				local storePlayers, playerTile = {}
+				local storePlayers = {}
+				local playerTile = {}
 				for i = 1, #config.playerPositions do
 					playerTile = Tile(config.playerPositions[i]):getTopCreature()
 					if isPlayer(playerTile) then
-						storePlayers[#storePlayers + 1] = playerTile
+						if playerTile:getStorageValue(Storage.Quest.HeartOfDestruction.EradicatorTimer) > os.time() then
+							player:getPosition():sendMagicEffect(CONST_ME_POFF)
+							player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You or a member in your team have to wait 20 hours to face this boss again!")
+							return true
+						end
+						table.insert(storePlayers, playerTile)
 					end
 				end
 
-				if doCheckArea() == false then
-					clearArea()
+				if CheckBossRoom(config.bossRoomCenterPosition, config.rangeX, config.rangeY) == false then
+					ClearMonstersInBossRoom(config.bossRoomCenterPosition, config.rangeX, config.rangeY)
 
-					local players
 
+					local playersUidTable = {}
 					for i = 1, #storePlayers do
-						players = storePlayers[i]
+						local player = storePlayers[i]
 						config.playerPositions[i]:sendMagicEffect(CONST_ME_POFF)
-						players:teleportTo(config.newPos)
-						players:setStorageValue(14329, os.time() + 20*60*60)
+						table.insert(playersUidTable, player.uid)
+						player:teleportTo(config.newPos)
+						player:setStorageValue(Storage.Quest.HeartOfDestruction.EradicatorTimer, os.time() + 20*60*60)
 					end
 					Position(config.newPos):sendMagicEffect(11)
 
-					eradicatorReleaseT = false -- Liberar Spell
-					eradicatorWeak = 0 -- Eradicator Form
-					areaEradicator1 = addEvent(clearArea, 15 * 60000)
-					areaEradicator2 = addEvent(function() eradicatorReleaseT = true end, 74000)
+					addEvent(ClearPlayersInBossRoom, 15 * 60000, playersUidTable, config.bossRoomCenterPosition, config.rangeX, config.rangeY, config.exitPos)
 
-					Game.createMonster("Spark of Destruction", {x = 32304, y = 31282, z = 14}, false, true)
-					Game.createMonster("Spark of Destruction", {x = 32305, y = 31287, z = 14}, false, true)
-					Game.createMonster("Spark of Destruction", {x = 32312, y = 31287, z = 14}, false, true)
-					Game.createMonster("Spark of Destruction", {x = 32314, y = 31282, z = 14}, false, true)
-					Game.createMonster("Eradicator", {x = 32309, y = 31283, z = 14}, false, true)
+					Game.createMonster("Spark of Destruction", {x = 114, y = 903, z = 8}, false, true)
+					Game.createMonster("Spark of Destruction", {x = 106, y = 903, z = 8}, false, true)
+					Game.createMonster("Spark of Destruction", {x = 106, y = 911, z = 8}, false, true)
+					Game.createMonster("Spark of Destruction", {x = 114, y = 910, z = 8}, false, true)
+					Game.createMonster("Eradicator", {x = 110, y = 906, z = 8}, false, true)
 
-					local vortex = Tile({x = 32318, y = 31284, z = 14}):getItemById(23482)
-					if vortex then
-						vortex:transform(23483)
-						vortex:setActionId(14348)
-					end
+					EradicatorReleaseT = false -- Liberar Spell
+					EradicatorWeak = 0 -- Eradicator Form
+					AreaEradicator = addEvent(function() EradicatorReleaseT = true end, 40000)
+
 				else
 					player:sendTextMessage(19, "Someone is in the area.")
 				end
 			else
+				player:sendCancelMessage("You need to stay in front of lever")
 				return true
 			end
 		end

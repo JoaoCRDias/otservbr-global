@@ -16,7 +16,7 @@ monster.outfit = {
 monster.health = 35000
 monster.maxHealth = 35000
 monster.race = "blood"
-monster.corpse = 0
+monster.corpse = 1
 monster.speed = 0
 
 monster.faction = FACTION_LION

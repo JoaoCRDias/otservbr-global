@@ -11,8 +11,8 @@ local function setStorage()
 					if creatures and #creatures > 0 then
 						for _, c in pairs(creatures) do
 							if isPlayer(c) then
-								if c:getStorageValue(14322) < 1 then
-									c:setStorageValue(14322, 1) -- Access to boss Anomaly
+								if AnomalyStage < 1 then
+									AnomalyStage = 1 -- Access to boss Anomaly
 								end
 							end
 						end

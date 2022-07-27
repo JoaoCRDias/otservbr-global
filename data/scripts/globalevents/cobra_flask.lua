@@ -1,4 +1,4 @@
-local position = Position(33395, 32666, 5)
+local position = Position(1221, 1057, 5)
 
 local cobraEmptyFlask = GlobalEvent("Cobraflask")
 

@@ -4,22 +4,22 @@ function eradicatorTransform.onThink(creature)
 		return false
 	end
 
-	if eradicatorReleaseT == true then
-		if eradicatorWeak == 0 then
+	if EradicatorReleaseT == true then
+		if EradicatorWeak == 0 then
 			local pos = creature:getPosition()
 			local health = creature:getHealth()
 			creature:remove()
 
 			local monster = Game.createMonster("eradicator2", pos, false, true)
 			monster:addHealth(-monster:getHealth() + health, COMBAT_PHYSICALDAMAGE)
-			Game.createMonster("spark of destruction", {x = 32304, y = 31282, z = 14}, false, true)
-			Game.createMonster("spark of destruction", {x = 32305, y = 31287, z = 14}, false, true)
-			Game.createMonster("spark of destruction", {x = 32312, y = 31287, z = 14}, false, true)
-			Game.createMonster("spark of destruction", {x = 32314, y = 31282, z = 14}, false, true)
-			eradicatorWeak = 1 -- Eradicator form
-			eradicatorReleaseT = false -- Release spell
-			areaEradicator2 = addEvent(function() eradicatorReleaseT = true end, 9000)
-		elseif eradicatorWeak == 1 then
+			Game.createMonster("spark of destruction", {x = 114, y = 903, z = 8}, false, true)
+			Game.createMonster("spark of destruction", {x = 106, y = 903, z = 8}, false, true)
+			Game.createMonster("spark of destruction", {x = 106, y = 911, z = 8}, false, true)
+			Game.createMonster("spark of destruction", {x = 114, y = 910, z = 8}, false, true)
+			EradicatorWeak = 1 -- Eradicator form
+			EradicatorReleaseT = false -- Release spell
+			AreaEradicator = addEvent(function() EradicatorReleaseT = true end, 9000)
+		elseif EradicatorWeak == 1 then
 			local pos = creature:getPosition()
 			local health = creature:getHealth()
 
@@ -27,9 +27,9 @@ function eradicatorTransform.onThink(creature)
 
 			local monster = Game.createMonster("eradicator", pos, false, true)
 			monster:addHealth(-monster:getHealth() + health, COMBAT_PHYSICALDAMAGE)
-			eradicatorWeak = 0
-			eradicatorReleaseT = false -- Release spell
-			areaEradicator2 = addEvent(function() eradicatorReleaseT = true end, 74000)
+			EradicatorWeak = 0
+			EradicatorReleaseT = false -- Release spell
+			AreaEradicator = addEvent(function() EradicatorReleaseT = true end, 40000)
 		end
 	end
 	return true

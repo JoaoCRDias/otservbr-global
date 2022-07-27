@@ -4,23 +4,11 @@ function heartMinionDeath.onDeath(creature)
 		return true
 	end
 	local monster = creature:getName():lower()
-	if monster == "frenzy" then
-		rageSummon = rageSummon - 1
-		devourerSummon = devourerSummon - 1
-	elseif monster == "damage resonance" then
-		resonanceActive = false
+	if monster == "damage resonance" then
+		ResonanceActive = false
 	elseif monster == "disruption" or monster == "charged disruption" or monster == "overcharged disruption" then
-		destructionSummon = destructionSummon - 1
-		devourerSummon = devourerSummon - 1
-	elseif monster == "the hunger" then
-		devourerBossesKilled = devourerBossesKilled + 1
-		theHungerKilled = true
-	elseif monster == "the destruction" then
-		devourerBossesKilled = devourerBossesKilled + 1
-		theDestructionKilled = true
-	elseif monster == "the rage" then
-		devourerBossesKilled = devourerBossesKilled + 1
-		theRageKilled = true
+		DestructionSummon = DestructionSummon - 1
+		DevourerSummon = DevourerSummon - 1
 	end
 	return true
 end

@@ -13,10 +13,10 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.health = 25000
-monster.maxHealth = 25000
+monster.health = 670000
+monster.maxHealth = 670000
 monster.race = "venom"
-monster.corpse = 0
+monster.corpse = 23564
 monster.speed = 450
 monster.manaCost = 0
 
@@ -50,10 +50,6 @@ monster.flags = {
 	canWalkOnEnergy = false,
 	canWalkOnFire = false,
 	canWalkOnPoison = false
-}
-
-monster.events = {
-	"HeartBossDeath"
 }
 
 monster.light = {
@@ -94,11 +90,11 @@ monster.loot = {
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -1600},
-	{name ="combat", interval = 2000, chance = 20, type = COMBAT_LIFEDRAIN, minDamage = -400, maxDamage = -800, length = 10, spread = 3, effect = CONST_ME_MAGIC_RED, target = false},
-	{name ="combat", interval = 2000, chance = 20, type = COMBAT_DEATHDAMAGE, minDamage = -400, maxDamage = -800, radius = 4, effect = CONST_ME_SMALLCLOUDS, target = true},
-	{name ="combat", interval = 2000, chance = 20, type = COMBAT_ENERGYDAMAGE, minDamage = -400, maxDamage = -800, radius = 4, shootEffect = CONST_ANI_ENERGY, effect = CONST_ME_YELLOWENERGY, target = true},
-	{name ="combat", interval = 2000, chance = 20, type = COMBAT_ENERGYDAMAGE, minDamage = -600, maxDamage = -1200, length = 10, spread = 3, effect = CONST_ME_LOSEENERGY, target = false},
+	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -3600},
+	{name ="combat", interval = 2000, chance = 20, type = COMBAT_LIFEDRAIN, minDamage = -600, maxDamage = -950, length = 10, spread = 3, effect = CONST_ME_MAGIC_RED, target = false},
+	{name ="combat", interval = 2000, chance = 20, type = COMBAT_DEATHDAMAGE, minDamage = -600, maxDamage = -950, radius = 4, effect = CONST_ME_SMALLCLOUDS, target = true},
+	{name ="combat", interval = 2000, chance = 20, type = COMBAT_ENERGYDAMAGE, minDamage = -600, maxDamage = -950, radius = 4, shootEffect = CONST_ANI_ENERGY, effect = CONST_ME_YELLOWENERGY, target = true},
+	{name ="combat", interval = 2000, chance = 20, type = COMBAT_ENERGYDAMAGE, minDamage = -800, maxDamage = -1600, length = 10, spread = 3, effect = CONST_ME_LOSEENERGY, target = false},
 	{name ="combat", interval = 2000, chance = 20, type = COMBAT_LIFEDRAIN, radius = 8, effect = CONST_ME_MAGIC_RED, target = false},
 	{name ="anomaly break", interval = 2000, chance = 40, target = false},
 	{name ="devourer summon", interval = 2000, chance = 25, target = false}

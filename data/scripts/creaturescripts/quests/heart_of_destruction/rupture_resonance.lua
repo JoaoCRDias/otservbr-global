@@ -5,46 +5,46 @@ function ruptureResonance.onThink(creature)
 	end
 
 	local hp = (creature:getHealth() / creature:getMaxHealth()) * 100
-	if hp <= 80 and ruptureResonanceStage == 0 and resonanceActive == false then
-		Game.createMonster("spark of destruction", {x = 32331, y = 31254, z = 14}, false, true)
-		Game.createMonster("spark of destruction", {x = 32338, y = 31254, z = 14}, false, true)
-		Game.createMonster("spark of destruction", {x = 32330, y = 31250, z = 14}, false, true)
-		Game.createMonster("spark of destruction", {x = 32338, y = 31250, z = 14}, false, true)
-		Game.createMonster("damage resonance", {x = 32332, y = 31250, z = 14}, false, true)
-		ruptureResonanceStage = 1
-		resonanceActive = true
-	elseif hp <= 60 and ruptureResonanceStage == 1 and resonanceActive == false then
-		Game.createMonster("spark of destruction", {x = 32331, y = 31254, z = 14}, false, true)
-		Game.createMonster("spark of destruction", {x = 32338, y = 31254, z = 14}, false, true)
-		Game.createMonster("spark of destruction", {x = 32330, y = 31250, z = 14}, false, true)
-		Game.createMonster("spark of destruction", {x = 32338, y = 31250, z = 14}, false, true)
-		Game.createMonster("damage resonance", {x = 32332, y = 31250, z = 14}, false, true)
-		ruptureResonanceStage = 2
-		resonanceActive = true
-	elseif hp <= 40 and ruptureResonanceStage == 2 and resonanceActive == false then
-		Game.createMonster("spark of destruction", {x = 32331, y = 31254, z = 14}, false, true)
-		Game.createMonster("spark of destruction", {x = 32338, y = 31254, z = 14}, false, true)
-		Game.createMonster("spark of destruction", {x = 32330, y = 31250, z = 14}, false, true)
-		Game.createMonster("spark of destruction", {x = 32338, y = 31250, z = 14}, false, true)
-		Game.createMonster("damage resonance", {x = 32332, y = 31250, z = 14}, false, true)
-		ruptureResonanceStage = 3
-		resonanceActive = true
-	elseif hp <= 25 and ruptureResonanceStage == 3 and resonanceActive == false then
-		Game.createMonster("spark of destruction", {x = 32331, y = 31254, z = 14}, false, true)
-		Game.createMonster("spark of destruction", {x = 32338, y = 31254, z = 14}, false, true)
-		Game.createMonster("spark of destruction", {x = 32330, y = 31250, z = 14}, false, true)
-		Game.createMonster("spark of destruction", {x = 32338, y = 31250, z = 14}, false, true)
-		Game.createMonster("damage resonance", {x = 32332, y = 31250, z = 14}, false, true)
-		ruptureResonanceStage = 4
-		resonanceActive = true
-	elseif hp <= 10 and ruptureResonanceStage == 4 and resonanceActive == false then
-		Game.createMonster("spark of destruction", {x = 32331, y = 31254, z = 14}, false, true)
-		Game.createMonster("spark of destruction", {x = 32338, y = 31254, z = 14}, false, true)
-		Game.createMonster("spark of destruction", {x = 32330, y = 31250, z = 14}, false, true)
-		Game.createMonster("spark of destruction", {x = 32338, y = 31250, z = 14}, false, true)
-		Game.createMonster("damage resonance", {x = 32332, y = 31250, z = 14}, false, true)
-		ruptureResonanceStage = -1
-		resonanceActive = true
+	if hp <= 80 and RuptureResonanceStage == 0 and ResonanceActive == false then
+		Game.createMonster("spark of destruction", {x = 194, y = 913, z = 8}, false, true)
+		Game.createMonster("spark of destruction", {x = 195, y = 919, z = 8}, false, true)
+		Game.createMonster("spark of destruction", {x = 203, y = 918, z = 8}, false, true)
+		Game.createMonster("spark of destruction", {x = 202, y = 912, z = 8}, false, true)
+		Game.createMonster("damage resonance", {x = 197, y = 916, z = 8}, false, true)
+		RuptureResonanceStage = 1
+		ResonanceActive = true
+	elseif hp <= 60 and RuptureResonanceStage == 1 and ResonanceActive == false then
+		Game.createMonster("spark of destruction", {x = 194, y = 913, z = 8}, false, true)
+		Game.createMonster("spark of destruction", {x = 195, y = 919, z = 8}, false, true)
+		Game.createMonster("spark of destruction", {x = 203, y = 918, z = 8}, false, true)
+		Game.createMonster("spark of destruction", {x = 202, y = 912, z = 8}, false, true)
+		Game.createMonster("damage resonance", {x = 197, y = 916, z = 8}, false, true)
+		RuptureResonanceStage = 2
+		ResonanceActive = true
+	elseif hp <= 40 and RuptureResonanceStage == 2 and ResonanceActive == false then
+		Game.createMonster("spark of destruction", {x = 194, y = 913, z = 8}, false, true)
+		Game.createMonster("spark of destruction", {x = 195, y = 919, z = 8}, false, true)
+		Game.createMonster("spark of destruction", {x = 203, y = 918, z = 8}, false, true)
+		Game.createMonster("spark of destruction", {x = 202, y = 912, z = 8}, false, true)
+		Game.createMonster("damage resonance", {x = 197, y = 916, z = 8}, false, true)
+		RuptureResonanceStage = 3
+		ResonanceActive = true
+	elseif hp <= 25 and RuptureResonanceStage == 3 and ResonanceActive == false then
+		Game.createMonster("spark of destruction", {x = 194, y = 913, z = 8}, false, true)
+		Game.createMonster("spark of destruction", {x = 195, y = 919, z = 8}, false, true)
+		Game.createMonster("spark of destruction", {x = 203, y = 918, z = 8}, false, true)
+		Game.createMonster("spark of destruction", {x = 202, y = 912, z = 8}, false, true)
+		Game.createMonster("damage resonance", {x = 197, y = 916, z = 8}, false, true)
+		RuptureResonanceStage = 4
+		ResonanceActive = true
+	elseif hp <= 10 and RuptureResonanceStage == 4 and ResonanceActive == false then
+		Game.createMonster("spark of destruction", {x = 194, y = 913, z = 8}, false, true)
+		Game.createMonster("spark of destruction", {x = 195, y = 919, z = 8}, false, true)
+		Game.createMonster("spark of destruction", {x = 203, y = 918, z = 8}, false, true)
+		Game.createMonster("spark of destruction", {x = 202, y = 912, z = 8}, false, true)
+		Game.createMonster("damage resonance", {x = 197, y = 916, z = 8}, false, true)
+		RuptureResonanceStage = -1
+		ResonanceActive = true
 	end
 
 	return true

@@ -18,7 +18,7 @@ function healthForgotten.onHealthChange(creature, attacker, primaryDamage, prima
 			end
 		end
 	end
-	primaryDamage = primaryDamage + 100 / 100. * primaryDamage
+
 	return primaryDamage, primaryType, secondaryDamage, secondaryType
 end
 

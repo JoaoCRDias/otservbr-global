@@ -1,6 +1,6 @@
 local function outExplode()
-	local upConer = {x = 32223, y = 31273, z = 14}       -- upLeftCorner
-	local downConer = {x = 32246, y = 31297, z = 14}     -- downRightCorner
+	local upConer = {x = 125, y = 860, z = 8}       -- upLeftCorner
+	local downConer = {x = 146, y = 881, z = 8}     -- downRightCorner
 
 	for i=upConer.x, downConer.x do
 		for j=upConer.y, downConer.y do
@@ -12,9 +12,9 @@ local function outExplode()
 					if creatures and #creatures > 0 then
 						for _, c in pairs(creatures) do
 							if isPlayer(c) then
-								c:teleportTo({x = 32234, y = 31280, z = 14})
+								c:teleportTo({x = 135, y = 866, z = 8})
 							elseif isMonster(c) and c:getName() == "Charging Outburst" then
-								c:teleportTo({x = 32234, y = 31279, z = 14})
+								c:teleportTo({x = 135, y = 865, z = 8})
 							end
 						end
 					end
@@ -28,7 +28,7 @@ local combat = Combat()
 combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
 combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_PURPLEENERGY)
 
-arr = {
+local arr = {
 	{0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
 	{0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0},
 	{0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0},
@@ -51,6 +51,7 @@ local function delayedCastSpell(creature, var)
 	if not creature then
 		return
 	end
+	creature:say("BOOM.", TALKTYPE_MONSTER_SAY)
 	return combat:execute(creature, positionToVariant(creature:getPosition()))
 end
 
@@ -67,12 +68,11 @@ function spell.onCastSpell(creature, var)
 
 	outExplode()
 	delayedCastSpell(creature, var)
-	chargingOutKilled = true
+	ChargingOutKilled = true
 	addEvent(removeOutburst, 1000, creature.uid)
 
-	local monster = Game.createMonster("Outburst", {x = 32234, y = 31284, z = 14}, false, true)
-	monster:addHealth(-monster:getHealth() + outburstHealth, COMBAT_PHYSICALDAMAGE)
-	transferBossPoints(from, monster:getId())
+	local monster = Game.createMonster("Outburst", {x = 135, y = 870, z = 8}, false, true)
+	monster:addHealth(-monster:getHealth() + OutburstHealth, COMBAT_PHYSICALDAMAGE)
 	return true
 end
 

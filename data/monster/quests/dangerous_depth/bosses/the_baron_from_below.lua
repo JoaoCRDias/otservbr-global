@@ -20,6 +20,10 @@ monster.corpse = 27633
 monster.speed = 240
 monster.manaCost = 0
 
+monster.events = {
+	"Wz456BossDeath"
+}
+
 monster.changeTarget = {
 	interval = 4000,
 	chance = 10

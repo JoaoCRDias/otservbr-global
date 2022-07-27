@@ -228,6 +228,35 @@ function clearForgotten(fromPosition, toPosition, exitPosition, storage)
 	Game.setStorageValue(storage, 0)
 end
 
+function CheckBossRoom(centerPosition, rangeX, rangeY)
+
+	local spectators = Game.getSpectators(centerPosition, false, false, rangeX, rangeX, rangeY, rangeY)
+	for _, spectator in pairs(spectators) do
+		if spectator:isPlayer() then
+			return true
+		end
+	end
+	return false
+end
+
+function ClearPlayersInBossRoom(playersUidTable, centerPosition, rangeX, rangeY, exitPosition)
+	local spectators = Game.getSpectators(centerPosition, false, false, rangeX, rangeX, rangeY, rangeY)
+	for _, spectator in pairs(spectators) do
+		if spectator:isPlayer() and table.contains(playersUidTable, spectator.uid) then
+			spectator:teleportTo(exitPosition)
+		end
+	end
+end
+
+function ClearMonstersInBossRoom(centerPosition, rangeX, rangeY)
+	local spectators = Game.getSpectators(centerPosition, false, false, rangeX, rangeX, rangeY, rangeY)
+		for _, spectator in pairs(spectators) do
+		if spectator:isMonster() then
+			spectator:remove()
+		end
+	end
+end
+
 function isValidMoney(money)
 	return isNumber(money) and money > 0 and money < 4294967296
 end

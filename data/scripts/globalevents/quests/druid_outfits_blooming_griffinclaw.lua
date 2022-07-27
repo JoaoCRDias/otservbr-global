@@ -1,4 +1,4 @@
-local flowerPosition = Position(32024, 32830, 4)
+local flowerPosition = Position(985, 633, 7)
 
 local function decayFlower()
 	local tile = Tile(flowerPosition)

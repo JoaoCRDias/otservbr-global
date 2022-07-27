@@ -57,6 +57,10 @@ monster.light = {
 	color = 0
 }
 
+monster.events = {
+	"DeeplingBossesDeath"
+}
+
 monster.voices = {
 	interval = 5000,
 	chance = 10,
