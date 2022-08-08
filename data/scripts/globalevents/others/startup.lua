@@ -18,12 +18,12 @@ function serverstartup.onStartup()
 	loadLuaMapUnique(CorpseUnique)
 	-- Doors key table
 	loadLuaMapAction(KeyDoorAction)
-	-- Doors level table
+	-- -- Doors level table
 	loadLuaMapAction(LevelDoorAction)
-	-- Doors quest table
+	-- -- -- Doors quest table
 	loadLuaMapAction(QuestDoorAction)
 	loadLuaMapUnique(QuestDoorUnique)
-	-- Item table
+	-- -- Item table
 	loadLuaMapAction(ItemAction)
 	loadLuaMapUnique(ItemUnique)
 	-- Item daily reward table

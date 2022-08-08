@@ -80,7 +80,7 @@ local function creatureSayCallback(npc, creature, type, message)
 			if player:getStorageValue(Storage.OutfitQuest.GoldenOutfit) < 1 then
 				if player:getMoney() + player:getBankBalance() >= 500000000 then
 					local inbox = player:getSlotItem(CONST_SLOT_STORE_INBOX)
-					if inbox and inbox:getEmptySlots() > 0 then
+					if inbox then
 						local decoKit = inbox:addItem(23398, 1)
 						local decoItemName = ItemType(31510):getName()
 							decoKit:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, "You bought this item in the Store.\nUnwrap it in your own house to create a " .. decoItemName .. ".")
@@ -93,7 +93,7 @@ local function creatureSayCallback(npc, creature, type, message)
 							player:setStorageValue(Storage.OutfitQuest.GoldenOutfit, 1)
 					else
 						npcHandler:say("Please make sure you have free slots in your store inbox.", npc, creature)
-					end				
+					end
 				else
 					npcHandler:say("You do not have enough money to donate that amount.", npc, creature)
 				end

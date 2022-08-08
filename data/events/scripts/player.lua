@@ -293,6 +293,11 @@ function Player:onMoveItem(item, count, fromPosition, toPosition, fromCylinder, 
 		return false
 	end
 
+	if item:getActionId() == Storage.UnmoveableExercise then
+		self:sendCancelMessage("You cannot move that exercise weapon")
+		return false
+	end
+
 	-- No move if item count > 20 items
 	local tile = Tile(toPosition)
 	if tile and tile:getItemCount() > 20 then
@@ -376,12 +381,9 @@ function Player:onMoveItem(item, count, fromPosition, toPosition, fromCylinder, 
 			return false
 		end
 		-- Gold Pouch
-		if (containerTo:getId() == ITEM_GOLD_POUCH) then
-			if (not (item:getId() == ITEM_CRYSTAL_COIN or item:getId() == ITEM_PLATINUM_COIN
-			or item:getId() == ITEM_GOLD_COIN)) then
-				self:sendCancelMessage("You can move only money to this container.")
-				return false
-			end
+		if (containerTo:getId() == ITEM_GOLD_POUCH) or (containerTo:getParent():isContainer() and containerTo:getParent():getId() == ITEM_GOLD_POUCH) then
+			self:sendCancelMessage(RETURNVALUE_CONTAINERNOTENOUGHROOM)
+			return false
 		end
 	end
 

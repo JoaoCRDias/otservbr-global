@@ -1,17 +1,17 @@
 ExerciseWeaponsTable = {
 	-- MELE
-	[28540] = { skill = SKILL_SWORD },
-	[28552] = { skill = SKILL_SWORD },
-	[35279] = { skill = SKILL_SWORD },
-	[35285] = { skill = SKILL_SWORD },
-	[28553] = { skill = SKILL_AXE },
-	[28541] = { skill = SKILL_AXE },
-	[35280] = { skill = SKILL_AXE },
-	[35286] = { skill = SKILL_AXE },
-	[28554] = { skill = SKILL_CLUB },
-	[28542] = { skill = SKILL_CLUB },
-	[35281] = { skill = SKILL_CLUB },
-	[35287] = { skill = SKILL_CLUB },
+	[28540] = { skill = SKILL_SWORD, effect = CONST_ANI_WHIRLWINDSWORD, allowFarUse = true },
+	[28552] = { skill = SKILL_SWORD, effect = CONST_ANI_WHIRLWINDSWORD, allowFarUse = true  },
+	[35279] = { skill = SKILL_SWORD, effect = CONST_ANI_WHIRLWINDSWORD, allowFarUse = true  },
+	[35285] = { skill = SKILL_SWORD, effect = CONST_ANI_WHIRLWINDSWORD, allowFarUse = true  },
+	[28553] = { skill = SKILL_AXE, effect = CONST_ANI_WHIRLWINDAXE, allowFarUse = true  },
+	[28541] = { skill = SKILL_AXE, effect = CONST_ANI_WHIRLWINDAXE, allowFarUse = true  },
+	[35280] = { skill = SKILL_AXE, effect = CONST_ANI_WHIRLWINDAXE, allowFarUse = true  },
+	[35286] = { skill = SKILL_AXE, effect = CONST_ANI_WHIRLWINDAXE, allowFarUse = true  },
+	[28554] = { skill = SKILL_CLUB, effect = CONST_ANI_WHIRLWINDCLUB, allowFarUse = true  },
+	[28542] = { skill = SKILL_CLUB, effect = CONST_ANI_WHIRLWINDCLUB, allowFarUse = true  },
+	[35281] = { skill = SKILL_CLUB, effect = CONST_ANI_WHIRLWINDCLUB, allowFarUse = true  },
+	[35287] = { skill = SKILL_CLUB, effect = CONST_ANI_WHIRLWINDCLUB, allowFarUse = true  },
 	-- ROD
 	[28544] = { skill = SKILL_MAGLEVEL, effect = CONST_ANI_SMALLICE, allowFarUse = true },
 	[28556] = { skill = SKILL_MAGLEVEL, effect = CONST_ANI_SMALLICE, allowFarUse = true },
@@ -86,12 +86,16 @@ function ExerciseEvent(playerId, tilePosition, weaponId, dummyId)
 	end
 
 	local weaponCharges = weapon:getAttribute(ITEM_ATTRIBUTE_CHARGES)
-	if not weaponCharges or weaponCharges <= 0 then
-		weapon:remove(1) -- ??
-		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Your training weapon has disappeared.")
-		LeaveTraining(playerId)
-		return false
-	end
+	if weaponCharges <= 0 then
+    weapon:remove(1)
+    local weapon = player:getItemById(weaponId, true)
+    if not weapon or (not weapon:isItem() or not weapon:hasAttribute(ITEM_ATTRIBUTE_CHARGES)) then
+        player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Your training weapon has disappeared.")
+        LeaveTraining(playerId)
+        return false
+    end
+end
+
 
 	local isMagic = ExerciseWeaponsTable[weaponId].skill == SKILL_MAGLEVEL
 	local bonusDummy = table.contains(HouseDummies, weaponId) or nil
@@ -109,13 +113,6 @@ function ExerciseEvent(playerId, tilePosition, weaponId, dummyId)
 
 	if ExerciseWeaponsTable[weaponId].effect then
 		playerPosition:sendDistanceEffect(tilePosition, ExerciseWeaponsTable[weaponId].effect)
-	end
-
-	if weapon:getAttribute(ITEM_ATTRIBUTE_CHARGES) <= 0 then
-		weapon:remove(1)
-		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Your training weapon has disappeared.")
-		LeaveTraining(playerId)
-		return false
 	end
 
 	local vocation = player:getVocation()

@@ -81,6 +81,11 @@ Reserved player action storage key ranges (const.h)
 Storage = {
 	--Custom
 	ReportTimer = 28294,
+	OnlineTournamentPoints = 28295,
+	FreeExercise = 28296,
+	UnmoveableExercise = 28297,
+	LevelReward = 28298,
+	WeaponsChest = 28299,
 	-- General storages
 	isTraining = 30000,
 	NpcExhaust = 30001,
@@ -1487,17 +1492,12 @@ Storage = {
 	},
 	PitsOfInferno = {
 		-- Reserved storage from 52000 - 52019
-		ShortcutHubDoor = 52000,
-		ShortcutLeverDoor = 52001,
-		Pumin = 52002,
 		WeaponReward = 52003,
-		ThroneInfernatil = 52004,
-		ThroneTafariel = 52005,
-		ThroneVerminor = 52006,
-		ThroneApocalypse = 52007,
-		ThroneBazir = 52008,
-		ThroneAshfalor = 52009,
-		ThronePumin = 52010
+		Throne1 = 52004,
+		Throne2 = 52005,
+		Throne3 = 52006,
+		Throne4 = 52007,
+		Throne5 = 52008
 	},
 	HorestisTomb = {
 		-- Reserved storage from 52020 - 52029
