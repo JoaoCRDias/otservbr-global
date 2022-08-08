@@ -1,55 +1,75 @@
 local config = {
-	centerRoom = Position(32977, 31662, 14),
-	newPosition = Position(32977, 31667, 14)
+	leverAid = 14873,
+	bossName = "The Time Guardian",
+	bossPosition = Position(85, 620, 8),
+	storageTimer = Storage.ForgottenKnowledge.TimeGuardianTimer,
+	playerPositions = {
+		Position(118, 620, 8),
+		Position(118, 621, 8),
+		Position(118, 622, 8),
+		Position(118, 623, 8),
+		Position(118, 624, 8)
+	},
+	newPos = Position(85, 628, 8),
+	bossRoomCenterPosition = Position(85, 623, 8),
+	rangeX = 10,
+	rangeY = 10,
+	exitPos = Position(118, 626, 8),
+	pushPos = Position(118, 620, 8)
 }
 
-local bosses = {
-	{bossPosition = Position(32977, 31662, 14), bossName = 'The Time Guardian'},
-	{bossPosition = Position(32975, 31664, 13), bossName = 'The Freezing Time Guardian'},
-	{bossPosition = Position(32980, 31664, 13), bossName = 'The Blazing Time Guardian'}
-}
+local alptramunLever = Action()
+function alptramunLever.onUse(player, item, fromPosition, itemEx, toPosition)
+	if item.actionid == config.leverAid then
+		if item.itemid == 8911 then
+			if player:getPosition().x == config.pushPos.x and player:getPosition().y == config.pushPos.y and player:getPosition().z == config.pushPos.z then
 
-local forgottenKnowledgeGuardianLever = Action()
-function forgottenKnowledgeGuardianLever.onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if item.itemid == 8911 then
-		if player:getPosition() ~= Position(33010, 31660, 14) then
-			item:transform(8912)
-			return true
-		end
-	end
-	if item.itemid == 8911 then
-		local specs, spec = Game.getSpectators(config.centerRoom, false, false, 15, 15, 15, 15)
-		for i = 1, #specs do
-			spec = specs[i]
-			if spec:isPlayer() then
-				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Someone is fighting with The Time Guardian.")
+				local storePlayers = {}
+				local playerTile = {}
+				for i = 1, #config.playerPositions do
+					playerTile = Tile(config.playerPositions[i]):getTopCreature()
+					if isPlayer(playerTile) then
+						if playerTile:getStorageValue(config.storageTimer) > os.time() then
+							player:getPosition():sendMagicEffect(CONST_ME_POFF)
+							player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You or a member in your team have to wait 20 hours to face this boss again!")
+							return true
+						end
+						table.insert(storePlayers, playerTile)
+					end
+				end
+
+				if CheckBossRoom(config.bossRoomCenterPosition, config.rangeX, config.rangeY) == false then
+					ClearMonstersInBossRoom(config.bossRoomCenterPosition, config.rangeX, config.rangeY)
+
+
+					local playersUidTable = {}
+					for i = 1, #storePlayers do
+						local player = storePlayers[i]
+						config.playerPositions[i]:sendMagicEffect(CONST_ME_POFF)
+						table.insert(playersUidTable, player.uid)
+						player:teleportTo(config.newPos)
+						player:setStorageValue(config.storageTimer, os.time() + 20*60*60)
+					end
+					Position(config.newPos):sendMagicEffect(11)
+
+					addEvent(ClearPlayersInBossRoom, 15 * 60000, playersUidTable, config.bossRoomCenterPosition, config.rangeX, config.rangeY, config.exitPos)
+
+					Game.createMonster(config.bossName, config.bossPosition, false, true)
+
+					AnomalyStage = 0
+
+				else
+					player:sendTextMessage(19, "Someone is in the area.")
+				end
+			else
+				player:sendCancelMessage("You need to stay in front of lever")
 				return true
 			end
 		end
-		for q = 1,#bosses do
-			Game.createMonster(bosses[q].bossName, bosses[q].bossPosition, true, true)
-		end
-		for y = 31660, 31664 do
-			local playerTile = Tile(Position(33010, y, 14)):getTopCreature()
-			if playerTile and playerTile:isPlayer() then
-				if playerTile:getStorageValue(Storage.ForgottenKnowledge.TimeGuardianTimer) < os.time() then
-					playerTile:getPosition():sendMagicEffect(CONST_ME_POFF)
-					playerTile:teleportTo(config.newPosition)
-					playerTile:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-					playerTile:setStorageValue(Storage.ForgottenKnowledge.TimeGuardianTimer, os.time() + 20 * 3600)
-				else
-					player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You need to wait a while, recently someone challenge The Time Guardian.")
-					return true
-				end
-			end
-		end
-		addEvent(clearForgotten, 30 * 60 * 1000, Position(32967, 31654, 13), Position(32989, 31677, 14), Position(32870, 32724, 14))
-		item:transform(8912)
-		elseif item.itemid == 8912 then
-		item:transform(8911)
+		item:transform(item.itemid == 8911 and 8912 or 8911)
 	end
 	return true
 end
 
-forgottenKnowledgeGuardianLever:aid(24883)
-forgottenKnowledgeGuardianLever:register()
+alptramunLever:aid(config.leverAid)
+alptramunLever:register()

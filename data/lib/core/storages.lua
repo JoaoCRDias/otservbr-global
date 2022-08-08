@@ -79,6 +79,8 @@ Reserved player action storage key ranges (const.h)
 ]]
 
 Storage = {
+	--Custom
+	ReportTimer = 28294,
 	-- General storages
 	isTraining = 30000,
 	NpcExhaust = 30001,

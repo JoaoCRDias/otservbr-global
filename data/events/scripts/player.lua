@@ -500,6 +500,7 @@ end
 
 function Player:onReportRuleViolation(targetName, reportType, reportReason, comment, translation)
 	local name = self:getName()
+	print("aqui")
 	if hasPendingReport(name, targetName, reportType) then
 		self:sendTextMessage(MESSAGE_REPORT, "Your report is being processed.")
 		return
@@ -530,12 +531,13 @@ function Player:onReportRuleViolation(targetName, reportType, reportReason, comm
 end
 
 function Player:onReportBug(message, position, category)
-	if self:getAccountType() == ACCOUNT_TYPE_NORMAL then
+	if(self:getStorageValue(Storage.ReportTimer) ~= -1 and self:getStorageValue(Storage.ReportTimer) > os.time() and self:getGroup():getId() == 1) then
+		self:sendTextMessage(MESSAGE_REPORT,
+		"You can send another bug report in " .. self:getStorageValue(Storage.ReportTimer) - os.time() .. " seconds.")
 		return false
 	end
-
 	local name = self:getName()
-	local file = io.open("data/reports/bugs/" .. name .. " report.txt", "a")
+	local file = io.open("data/reports/bugs/" .. name .. "-report.txt", "a")
 
 	if not file then
 		self:sendTextMessage(MESSAGE_REPORT,
@@ -553,6 +555,8 @@ function Player:onReportBug(message, position, category)
 	io.write(" [Player Position: " .. playerPosition.x .. ", " .. playerPosition.y .. ", " .. playerPosition.z .. "]\n")
 	io.write("Comment: " .. message .. "\n")
 	io.close(file)
+
+	self:setStorageValue(Storage.ReportTimer, os.time() + 15*60)
 
 	self:sendTextMessage(MESSAGE_REPORT,
 		"Your report has been sent to " .. configManager.getString(configKeys.SERVER_NAME) .. ".")

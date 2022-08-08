@@ -1,18 +1,18 @@
 local info = {
 	bossName = "Scarlett Etzel",
-	middle = Position(33395, 32662, 6),
-	fromPos = Position(33385, 32638, 6),
-	toPos = Position(33406, 32660, 6),
-	exitPos = Position(33395, 32670, 6),
+	middle = Position(1221, 1044, 6),
+	fromPos = Position(1210, 1034, 6),
+	toPos = Position(1231, 1056, 6),
+	exitPos = Position(1220, 1066, 6),
 	timer = Storage.GraveDanger.CobraBastion.ScarlettTimer,
 	armorId = 31482,
-	armorPos = Position(33398, 32640, 6),
+	armorPos = Position(1223, 1036, 6),
 }
 
 local entry = {
 	metalWallId = 31449,
-	roomEntryPos = Position(33395, 32666, 6),
-	roomExitPos = Position(33395, 32668, 6)
+	roomEntryPos = Position(1220, 1062, 6),
+	roomExitPos = Position(1220, 1064, 6)
 }
 
 local transformTo = {
@@ -51,11 +51,11 @@ function graveScarlettUid.onUse(player, item, fromPosition, target, toPosition, 
 			for _, p in pairs(playersTable) do
 				local nPlayer = Player(p)
 				if nPlayer then
-					nPlayer:teleportTo(Position(33395, 32656, 6))
+					nPlayer:teleportTo(Position(1220, 1052, 6))
 					nPlayer:setStorageValue(info.timer, os.time() + 20*60*60)
 				end
 			end
-			local scarlett = Game.createMonster("Scarlett Etzel", Position(33396, 32640, 6))
+			local scarlett = Game.createMonster("Scarlett Etzel", Position(1221, 1037, 6))
 			if scarlett then
 				scarlett:registerEvent('scarlettThink')
 				scarlett:registerEvent('scarlettHealth')
@@ -73,7 +73,7 @@ graveScarlettUid:register()
 
 
 local mirror = {
-	fromPos = Position(33389, 32641, 6),
+	fromPos = Position(1214, 1037, 6),
 	toPos = Position(33403, 32655, 6),
 	mirrors = {31474, 31475, 31476, 31477}
 }

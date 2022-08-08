@@ -1,10 +1,9 @@
 local config = {
-	firstPlayerPosition = Position(32457, 32508, 6),
-    centerPosition = Position(32439, 32523, 7), -- Center Room  
-	exitPosition = Position(32453, 32503, 7), -- Exit Position
-	newPosition = Position(32453, 32510, 7),
-	rangeX = 22,
-	rangeY = 16,
+	firstPlayerPosition = Position(213, 745, 6),
+  centerPosition = Position(196, 758, 7), -- Center Room
+	exitPosition = Position(214, 744, 6), -- Exit Position
+	rangeX = 24,
+	rangeY = 20,
 }
 
 local lionCommanderDeath = CreatureEvent("lionCommanderDeath")
@@ -33,8 +32,7 @@ function usurperCommanderDeath.onPrepareDeath(creature)
 	local totalCommanders = Game.getStorageValue(Storage.TheOrderOfTheLion.Drume.TotalUsurperCommanders)
 	Game.setStorageValue(Storage.TheOrderOfTheLion.Drume.TotalUsurperCommanders, totalCommanders - 1)
 	if totalCommanders == 1 then
-		Game.createMonster("Kesar", Position(32444, 32515, 7), false, true)
-		Game.createMonster("Drume", Position(32444, 32516, 7), false, true)
+		Game.createMonster("Drume", Position(196, 760, 7), false, true)
 	end
     return true
 end

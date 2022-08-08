@@ -1,22 +1,22 @@
 local config = {
 	lionPosition = {
-		Position(32444, 32512, 7),
-		Position(32449, 32516, 7),
-		Position(32444, 32520, 7),
+		Position(205, 757, 7),
+		Position(208, 750, 7),
+		Position(184, 762, 7),
 	},
 	usurperPosition = {
-		Position(32450, 32520, 7),
-		Position(32444, 32516, 7),
-		Position(32448, 32512, 7)
+		Position(208, 755, 7),
+		Position(187, 757, 7),
+		Position(190, 771, 7)
 	},
-	firstPlayerPosition = Position(32457, 32508, 6),
-    centerPosition = Position(32439, 32523, 7), -- Center Room  
-	exitPosition = Position(32453, 32503, 7), -- Exit Position
-	newPosition = Position(32453, 32510, 7),
-	rangeX = 22,
-	rangeY = 16,
-	timeToKill = 15, -- time in minutes to remove the player	
-}	
+	firstPlayerPosition = Position(213, 745, 6),
+  centerPosition = Position(196, 758, 7), -- Center Room
+	exitPosition = Position(214, 744, 6), -- Exit Position
+	newPosition = Position(208, 745, 7),
+	rangeX = 24,
+	rangeY = 20,
+	timeToKill = 15, -- time in minutes to remove the player
+}
 
 local function RoomIsOccupied(centerPosition, rangeX, rangeY)
 	local spectators = Game.getSpectators(config.centerPosition, false, true, config.rangeX, config.rangeX, config.rangeY, config.rangeY)
@@ -104,9 +104,9 @@ function drumeAction.onUse(player, item, fromPosition, target, toPosition, isHot
 	for _, pi in pairs(players) do
 		pi:setStorageValue(Storage.TheOrderOfTheLion.Drume.Timer, os.time() + (20 * 60 * 60))
 		pi:teleportTo(config.newPosition)
-		addEvent(clearRoomDrume, config.timeToKill * 60 * 1000, config.centerPosition, config.rangeX, config.rangeY, resetGlobalStorage)
+		addEvent(clearRoomDrume, config.timeToKill * 60 * 1000, config.centerPosition, config.rangeX, config.rangeY, 59601)
 		pi:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have " ..config.timeToKill.." minutes to defeat Drume.")
-		
+
 	end
 	config.newPosition:sendMagicEffect(CONST_ME_TELEPORT)
 	toPosition:sendMagicEffect(CONST_ME_POFF)

@@ -1,14 +1,14 @@
 local storage = Storage.GraveDanger.CobraBastion.Questline
 local rooms = {
-	[1] = {fromPos = Position(33390, 32642, 6), toPos = Position(33394, 32646, 6)},
-	[2] = {fromPos = Position(33390, 32646, 6), toPos = Position(33394, 32650, 6)},
-	[3] = {fromPos = Position(33390, 32650, 6), toPos = Position(33394, 32654, 6)},
-	[4] = {fromPos = Position(33394, 32642, 6), toPos = Position(33398, 32646, 6)},
-	[5] = {fromPos = Position(33394, 32646, 6), toPos = Position(33398, 32650, 6)},
-	[6] = {fromPos = Position(33394, 32650, 6), toPos = Position(33398, 32654, 6)},
-	[7] = {fromPos = Position(33398, 32642, 6), toPos = Position(33402, 32646, 6)},
-	[8] = {fromPos = Position(33398, 32646, 6), toPos = Position(33402, 32650, 6)},
-	[9] = {fromPos = Position(33398, 32650, 6), toPos = Position(33402, 32654, 6)}
+	[1] = {fromPos = Position(1215, 1219, 6), toPos = Position(33394, 1042, 6)},
+	[2] = {fromPos = Position(1215, 1042, 6), toPos = Position(33394, 1046, 6)},
+	[3] = {fromPos = Position(1215, 1046, 6), toPos = Position(33394, 1050, 6)},
+	[4] = {fromPos = Position(33394, 1219, 6), toPos = Position(1223, 1042, 6)},
+	[5] = {fromPos = Position(33394, 1042, 6), toPos = Position(1223, 1046, 6)},
+	[6] = {fromPos = Position(33394, 1046, 6), toPos = Position(1223, 1050, 6)},
+	[7] = {fromPos = Position(1223, 1219, 6), toPos = Position(1227, 1042, 6)},
+	[8] = {fromPos = Position(1223, 1042, 6), toPos = Position(1227, 1046, 6)},
+	[9] = {fromPos = Position(1223, 1046, 6), toPos = Position(1227, 1050, 6)}
 }
 
 local function isMirrorsCorrect(fromPosition, toPosition)
@@ -16,7 +16,7 @@ local function isMirrorsCorrect(fromPosition, toPosition)
 	local Pillar2 = Tile(Position(fromPosition.x + 4, fromPosition.y, fromPosition.z)):getItemById(31475)
 	local Pillar3 = Tile(Position(toPosition.x - 4, toPosition.y, toPosition.z)):getItemById(31477)
 	local Pillar4 = Tile(toPosition):getItemById(31476)
-	
+
 	if Pillar1 and Pillar2 and Pillar3 and Pillar4 then
 		return true
 	end
@@ -76,7 +76,7 @@ function scarlettThink.onThink(creature)
 
 	local mirrorsCount = 0
 	for _, p in pairs(rooms) do
-		if creature:getPosition():isInRange(p.fromPos, p.toPos) then	
+		if creature:getPosition():isInRange(p.fromPos, p.toPos) then
 			if isMirrorsCorrect(p.fromPos, p.toPos) then
 				addEvent(changeScarlett, 0.5*1000, creature:getId())
 				return true

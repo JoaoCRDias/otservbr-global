@@ -1,51 +1,78 @@
 local config = {
-	centerRoom = Position(32624, 32880, 14),
-	bossPosition = Position(32624, 32880, 14),
-	newPosition = Position(32624, 32886, 14)
+	leverAid = 14873,
+	bossName = "The Enraged Thorn Knight",
+	bossPosition = Position(70, 658, 8),
+	storageTimer = Storage.ForgottenKnowledge.ThornKnightTimer,
+	playerPositions = {
+		Position(103, 657, 8),
+		Position(103, 658, 8),
+		Position(103, 659, 8),
+		Position(103, 660, 8),
+		Position(103, 661, 8)
+	},
+	newPos = Position(70, 665, 8),
+	bossRoomCenterPosition = Position(70, 661, 8),
+	rangeX = 10,
+	rangeY = 10,
+	exitPos = Position(103, 663, 8),
+	pushPos = Position(103, 657, 8)
 }
 
-local forgottenKnowledgeThorn = Action()
-function forgottenKnowledgeThorn.onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if item.itemid == 8911 then
-		if player:getPosition() ~= Position(32657, 32877, 14) then
-			item:transform(8912)
-			return true
-		end
-	end
-	if item.itemid == 8911 then
-		local specs, spec = Game.getSpectators(config.centerRoom, false, false, 15, 15, 15, 15)
-		for i = 1, #specs do
-			spec = specs[i]
-			if spec:isPlayer() then
-				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Someone is fighting with Thorn Knight.")
+local alptramunLever = Action()
+function alptramunLever.onUse(player, item, fromPosition, itemEx, toPosition)
+
+
+
+	if item.actionid == config.leverAid then
+		if item.itemid == 8911 then
+			if player:getPosition().x == config.pushPos.x and player:getPosition().y == config.pushPos.y and player:getPosition().z == config.pushPos.z then
+
+				local storePlayers = {}
+				local playerTile = {}
+				for i = 1, #config.playerPositions do
+					playerTile = Tile(config.playerPositions[i]):getTopCreature()
+					if isPlayer(playerTile) then
+						if playerTile:getStorageValue(config.storageTimer) > os.time() then
+							player:getPosition():sendMagicEffect(CONST_ME_POFF)
+							player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You or a member in your team have to wait 20 hours to face this boss again!")
+							return true
+						end
+						table.insert(storePlayers, playerTile)
+					end
+				end
+
+				if CheckBossRoom(config.bossRoomCenterPosition, config.rangeX, config.rangeY) == false then
+					ClearMonstersInBossRoom(config.bossRoomCenterPosition, config.rangeX, config.rangeY)
+
+
+					local playersUidTable = {}
+					for i = 1, #storePlayers do
+						local player = storePlayers[i]
+						config.playerPositions[i]:sendMagicEffect(CONST_ME_POFF)
+						table.insert(playersUidTable, player.uid)
+						player:teleportTo(config.newPos)
+						player:setStorageValue(config.storageTimer, os.time() + 20*60*60)
+					end
+					Position(config.newPos):sendMagicEffect(11)
+
+					addEvent(ClearPlayersInBossRoom, 15 * 60000, playersUidTable, config.bossRoomCenterPosition, config.rangeX, config.rangeY, config.exitPos)
+
+					Game.createMonster(config.bossName, config.bossPosition, false, true)
+
+					AnomalyStage = 0
+
+				else
+					player:sendTextMessage(19, "Someone is in the area.")
+				end
+			else
+				player:sendCancelMessage("You need to stay in front of lever")
 				return true
 			end
 		end
-		for d = 1, 6 do
-			Game.createMonster('possessed tree', Position(math.random(32619, 32629), math.random(32877, 32884), 14), true, true)
-		end
-		Game.createMonster("mounted thorn knight", config.bossPosition, true, true)
-		for y = 32877, 32881 do
-			local playerTile = Tile(Position(32657, y, 14)):getTopCreature()
-			if playerTile and playerTile:isPlayer() then
-				if playerTile:getStorageValue(Storage.ForgottenKnowledge.ThornKnightTimer) < os.time() then
-					playerTile:getPosition():sendMagicEffect(CONST_ME_POFF)
-					playerTile:teleportTo(config.newPosition)
-					playerTile:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-					playerTile:setStorageValue(Storage.ForgottenKnowledge.ThornKnightTimer, os.time() + 20 * 3600)
-				else
-					player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You need to wait a while, recently someone challenge Thorn Knight.")
-					return true
-				end
-			end
-		end
-		addEvent(clearForgotten, 30 * 60 * 1000, Position(32613, 32869, 14), Position(32636, 32892, 14), Position(32678, 32888, 14))
-		item:transform(8912)
-		elseif item.itemid == 8912 then
-		item:transform(8911)
+		item:transform(item.itemid == 8911 and 8912 or 8911)
 	end
 	return true
 end
 
-forgottenKnowledgeThorn:aid(24879)
-forgottenKnowledgeThorn:register()
+alptramunLever:aid(config.leverAid)
+alptramunLever:register()

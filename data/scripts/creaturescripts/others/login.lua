@@ -223,6 +223,12 @@ function playerLogin.onLogin(player)
 		stats.playerId = player:getId()
 	end
 
+	if player:getLevel() < 200  then
+			player:addMissingBless(true, true)
+			player:say('You have free bless until lvl 200!', TALKTYPE_MONSTER_SAY)
+			player:getPosition():sendMagicEffect(CONST_ME_HOLYAREA)
+	end
+
 	if player:getStorageValue(Storage.combatProtectionStorage) < 1 then
 		player:setStorageValue(Storage.combatProtectionStorage, 1)
 		onMovementRemoveProtection(playerId, player:getPosition(), 10)

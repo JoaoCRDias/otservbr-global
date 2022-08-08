@@ -1,10 +1,10 @@
 local setting = {
-	centerRoom = {x = 33364, y = 31318, z = 9},
+	centerRoom = Position(1250, 947, 9),
 	storage = Storage.TheSecretLibrary.TheOrderOfTheFalcon.OberonTimer,
-	Pillar1pos = {x = 33361, y = 31316, z = 9},
-	bossPosition = {x = 33364, y = 31317, z = 9},
-	kickPosition = {x = 33300, y = 31289, z = 9},
-	playerTeleport = {x = 33364, y = 31322, z = 9}
+	Pillar1pos = Position(1247, 945, 9),
+	bossPosition = Position(1250, 945, 9),
+	kickPosition = Position(1180, 917, 9),
+	playerTeleport = Position(1250, 951, 9)
 }
 
 local oberonLever = Action()

@@ -1,8 +1,8 @@
 local config = {
-	[3255] = {position = Position(33349, 31346, 8)},
-	[57602] = {position = Position(33329, 31332, 9)},
-	[57604] = {position = Position(33363, 31342, 9)},
-	[57699] = {position = Position(33308, 31325, 8)}
+	[3255] = {position = Position(1234, 974, 8)},
+	[57602] = {position = Position(1215, 961, 9)},
+	[57604] = {position = Position(1250, 971, 9)},
+	[57699] = {position = Position(1195, 954, 8)}
 }
 
 local falconCastle = MoveEvent()
@@ -25,7 +25,7 @@ function falconCastle.onStepIn(creature, item, position, fromPosition)
 			end
 			doSendMagicEffect(player:getPosition(), CONST_ME_TELEPORT)
 			player:teleportTo(value.position)
-			doSendMagicEffect(value.position, CONST_ME_TELEPORT)		
+			doSendMagicEffect(value.position, CONST_ME_TELEPORT)
 		end
 	end
 end

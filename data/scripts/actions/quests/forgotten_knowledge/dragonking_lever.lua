@@ -1,61 +1,78 @@
 local config = {
-	bossPosition = Position(33357, 31182, 10),
-	newPosition = Position(33359, 31186, 10),
-	soulPosition = Position(33359, 31182, 12)
+	leverAid = 14874,
+	bossName = "Soul of Dragonking Zyrtarch",
+	bossPosition = Position(36, 578, 8),
+	storageTimer = Storage.ForgottenKnowledge.DragonkingTimer,
+	playerPositions = {
+		Position(69, 574, 8),
+		Position(69, 575, 8),
+		Position(69, 576, 8),
+		Position(69, 577, 8),
+		Position(69, 578, 8)
+	},
+	newPos = Position(36, 584, 8),
+	bossRoomCenterPosition = Position(36, 578, 8),
+	rangeX = 10,
+	rangeY = 10,
+	exitPos = Position(69, 580, 8),
+	pushPos = Position(69, 574, 8)
 }
 
-local monsters = {
-	{position = Position(33352, 31187, 10)},
-	{position = Position(33363, 31187, 10)},
-	{position = Position(33353, 31176, 10)},
-	{position = Position(33363, 31176, 10)}
-}
+local alptramunLever = Action()
+function alptramunLever.onUse(player, item, fromPosition, itemEx, toPosition)
 
-local forgottenKnowledgeDragonking = Action()
-function forgottenKnowledgeDragonking.onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if item.itemid == 8911 then
-		if player:getPosition() ~= Position(33391, 31178, 10) then
-			item:transform(8912)
-			return true
-		end
-	end
-	if item.itemid == 8911 then
-		for v = 10, 12 do
-			local specs, spec = Game.getSpectators(Position(33357, 31182, v), false, false, 15, 15, 15, 15)
-			for i = 1, #specs do
-				spec = specs[i]
-				if spec:isPlayer() then
-					player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Someone is fighting with Dragonking Zyrtarch.")
-					return true
+
+
+	if item.actionid == config.leverAid then
+		if item.itemid == 8911 then
+			if player:getPosition().x == config.pushPos.x and player:getPosition().y == config.pushPos.y and player:getPosition().z == config.pushPos.z then
+
+				local storePlayers = {}
+				local playerTile = {}
+				for i = 1, #config.playerPositions do
+					playerTile = Tile(config.playerPositions[i]):getTopCreature()
+					if isPlayer(playerTile) then
+						if playerTile:getStorageValue(config.storageTimer) > os.time() then
+							player:getPosition():sendMagicEffect(CONST_ME_POFF)
+							player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You or a member in your team have to wait 20 hours to face this boss again!")
+							return true
+						end
+						table.insert(storePlayers, playerTile)
+					end
 				end
-			end
-		end
-		for d = 1, #monsters do
-			Game.createMonster('soulcatcher', monsters[d].position, true, true)
-		end
-		Game.createMonster("dragonking zyrtarch", config.bossPosition, true, true)
-		Game.createMonster("soul of dragonking zyrtarch", config.soulPosition, true, true)
-		for y = 31178, 31182 do
-			local playerTile = Tile(Position(33391, y, 10)):getTopCreature()
-			if playerTile and playerTile:isPlayer() then
-				if playerTile:getStorageValue(Storage.ForgottenKnowledge.DragonkingTimer) < os.time() then
-					playerTile:getPosition():sendMagicEffect(CONST_ME_POFF)
-					playerTile:teleportTo(config.newPosition)
-					playerTile:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-					playerTile:setStorageValue(Storage.ForgottenKnowledge.DragonkingTimer, os.time() + 20 * 3600)
+
+				if CheckBossRoom(config.bossRoomCenterPosition, config.rangeX, config.rangeY) == false then
+					ClearMonstersInBossRoom(config.bossRoomCenterPosition, config.rangeX, config.rangeY)
+
+
+					local playersUidTable = {}
+					for i = 1, #storePlayers do
+						local player = storePlayers[i]
+						config.playerPositions[i]:sendMagicEffect(CONST_ME_POFF)
+						table.insert(playersUidTable, player.uid)
+						player:teleportTo(config.newPos)
+						player:setStorageValue(config.storageTimer, os.time() + 20*60*60)
+					end
+					Position(config.newPos):sendMagicEffect(11)
+
+					addEvent(ClearPlayersInBossRoom, 15 * 60000, playersUidTable, config.bossRoomCenterPosition, config.rangeX, config.rangeY, config.exitPos)
+
+					Game.createMonster(config.bossName, config.bossPosition, false, true)
+
+					AnomalyStage = 0
+
 				else
-					player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You need to wait a while, recently someone challenge Frozen Horror.")
-					return true
+					player:sendTextMessage(19, "Someone is in the area.")
 				end
+			else
+				player:sendCancelMessage("You need to stay in front of lever")
+				return true
 			end
 		end
-		addEvent(clearForgotten, 30 * 60 * 1000, Position(33348, 31172, 10), Position(33368, 31190, 12), Position(33407, 31172, 10))
-		item:transform(8912)
-	elseif item.itemid == 8912 then
-		item:transform(8911)
+		item:transform(item.itemid == 8911 and 8912 or 8911)
 	end
 	return true
 end
 
-forgottenKnowledgeDragonking:aid(24880)
-forgottenKnowledgeDragonking:register()
+alptramunLever:aid(config.leverAid)
+alptramunLever:register()
