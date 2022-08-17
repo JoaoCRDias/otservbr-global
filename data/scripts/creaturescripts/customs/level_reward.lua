@@ -1,10 +1,10 @@
 local config = {
-	[110] = {type = "item", id = {3043, 2}, msg = "Voce ganhou 20k por alcancar o level 20!"},
+	[20] = {type = "item", id = {3043, 2}, msg = "Voce ganhou 20k por alcancar o level 20!"},
 	-- [30] = {type = "bank", id = {20000, 0}, msg = "Foi depositado em seu bank 20000 gold coints!"},
-	[111] = {type = "mount", id = {13, 0}, msg = "Voce recebeu a montaria do donkey!"},
-	[114] = {type = "item", id = {2478, 1}, aid = Storage.WeaponsChest, msg = "Voce recebeu uma caixa de armas!"},
-	[113] = {type = "item", id = {3043, 5}, msg = "Voce recebeu 50k!"},
-	[118] = {type = "item", id = {8778, 1}, msg = "Voce recebeu um addon doll!"},
+	[30] = {type = "mount", id = {13, 0}, msg = "Voce recebeu a montaria do donkey!"},
+	[60] = {type = "item", id = {2478, 1}, aid = Storage.WeaponsChest, msg = "Voce recebeu uma caixa de armas!"},
+	[80] = {type = "item", id = {3043, 5}, msg = "Voce recebeu 50k!"},
+	[100] = {type = "item", id = {8778, 1}, msg = "Voce recebeu um addon doll!"},
 }
 
 local storage = Storage.LevelReward
