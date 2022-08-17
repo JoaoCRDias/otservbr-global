@@ -1,5 +1,5 @@
 local config = {
-	leverAid = 14873,
+	leverAid = 14875,
 	bossName = "The Enraged Thorn Knight",
 	bossPosition = Position(70, 658, 8),
 	storageTimer = Storage.ForgottenKnowledge.ThornKnightTimer,
