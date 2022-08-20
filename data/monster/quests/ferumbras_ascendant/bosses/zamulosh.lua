@@ -109,8 +109,8 @@ monster.defenses = {
 	defense = 30,
 	armor = 30,
 	{name ="combat", interval = 2000, chance = 25, type = COMBAT_HEALING, minDamage = 220, maxDamage = 535, effect = CONST_ME_YELLOW_RINGS, target = false},
-	{name ="zamulosh invisible", interval = 2000, chance = 25},
-	{name ="zamulosh tp", interval = 2000, chance = 15, target = false}
+	-- {name ="zamulosh invisible", interval = 2000, chance = 25},
+	-- {name ="zamulosh tp", interval = 2000, chance = 15, target = false}
 }
 
 monster.elements = {

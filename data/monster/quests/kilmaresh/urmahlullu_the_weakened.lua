@@ -13,7 +13,7 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.health = 100000
+monster.health = 512000
 monster.maxHealth = 512000
 monster.race = "blood"
 monster.corpse = 31413
@@ -52,9 +52,9 @@ monster.flags = {
 	canWalkOnPoison = true
 }
 
-monster.events = {
-	"WeakenedDeath"
-}
+-- monster.events = {
+-- 	"WeakenedDeath"
+-- }
 
 monster.light = {
 	level = 0,

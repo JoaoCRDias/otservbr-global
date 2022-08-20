@@ -7364,7 +7364,6 @@
 	<monster centerx="964" centery="1165" centerz="7" radius="1">
 		<monster name="Midnight Asura" x="0" y="0" z="7" spawntime="90" />
 	</monster>
-	<monster centerx="898" centery="1166" centerz="7" radius="3" />
 	<monster centerx="919" centery="1166" centerz="7" radius="1">
 		<monster name="Poacher" x="1" y="-1" z="7" spawntime="90" />
 	</monster>
@@ -19387,7 +19386,6 @@
 	<monster centerx="354" centery="927" centerz="11" radius="3">
 		<monster name="Ink Blob" x="2" y="-3" z="11" spawntime="60" />
 	</monster>
-	<monster centerx="813" centery="927" centerz="11" radius="3" />
 	<monster centerx="324" centery="928" centerz="11" radius="1">
 		<monster name="Burning Book" x="0" y="0" z="11" spawntime="60" />
 	</monster>
